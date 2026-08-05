@@ -3,6 +3,7 @@ import { brokerFeeComparison2026 } from "./broker-fee-comparison-2026";
 import { eurUsdConversionCost } from "./eur-usd-conversion-cost";
 import { usEtfVsUcitsVsToken } from "./us-etf-vs-ucits-vs-token";
 import { tradingFrequencyCost } from "./trading-frequency-cost";
+import { irelandInvestmentTax } from "./ireland-investment-tax";
 
 /**
  * Research article registry — CONTENT LAYER.
@@ -13,6 +14,7 @@ const articles: Article[] = [
   eurUsdConversionCost,
   usEtfVsUcitsVsToken,
   tradingFrequencyCost,
+  irelandInvestmentTax,
 ];
 
 export function getAllArticles(): Article[] {

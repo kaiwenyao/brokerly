@@ -107,6 +107,12 @@ async function setCoverField(slug: string, coverPath: string): Promise<void> {
     const src = await readFile(full, "utf8");
     if (!src.includes(`slug: "${slug}"`)) continue;
 
+    // Re-running for an article whose cover is already correct is a no-op, not an error.
+    if (src.includes(`cover: "${coverPath}"`)) {
+      console.log(`  cover already set in ${file}`);
+      return;
+    }
+
     let next = src;
     if (/^\s*cover:\s*["'].*["'],?\s*$/m.test(src)) {
       next = src.replace(
