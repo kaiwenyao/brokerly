@@ -1,0 +1,46 @@
+import type { Source } from "@/types";
+
+export const tradeRepublicSources: Source[] = [
+  {
+    brokerSlug: "trade-republic",
+    entity: "欧洲版（德国）",
+    topic: "官方价格方案",
+    url: "https://traderepublic.com/en-de/about?openModal=pricing-scheme",
+    usedFor: "核实普通单笔交易零订单佣金、每单 €1 结算费",
+    quotedRate: "€1/单；Direct Price 场所可能为 €2；另有价差和第三方费用",
+    checkedAt: "2026-08-05",
+  },
+  {
+    brokerSlug: "trade-republic",
+    entity: "欧洲版（芬兰）",
+    topic: "交易后成本说明（ex-post）",
+    url: "https://support.traderepublic.com/en-fi/809-What-is-the-ex_post-cost-information",
+    usedFor: "解释 €1 外部结算成本及 ETF 产品自身的持续费用",
+    checkedAt: "2026-08-05",
+  },
+  {
+    brokerSlug: "trade-republic",
+    entity: "欧洲版（荷兰）",
+    topic: "碎股交易说明",
+    url: "https://support.traderepublic.com/en-nl/1420-How-do-I-trade-fractions",
+    usedFor: "核实碎股交易机制与费用",
+    checkedAt: "2026-08-05",
+  },
+  {
+    brokerSlug: "trade-republic",
+    entity: "欧洲版（德国）",
+    topic: "订单执行场所",
+    url: "https://support.traderepublic.com/en-de/39-On-which-trading-market-will-my-orders-be-executed",
+    usedFor: "核实订单执行的交易所与报价形成方式",
+    checkedAt: "2026-08-05",
+  },
+  {
+    brokerSlug: "trade-republic",
+    entity: "欧洲版（斯洛文尼亚）",
+    topic: "可交易 ETF 范围",
+    url: "https://support.traderepublic.com/en-si/42-Which-ETFs-can-I-trade-at-Trade-Republic",
+    usedFor: "核实可交易 ETF 目录的说明口径",
+    notes: "不同国家页面的币种和细节可能不同，应按账户所属国家分别核对",
+    checkedAt: "2026-08-05",
+  },
+];

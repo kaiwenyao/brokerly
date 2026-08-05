@@ -22,6 +22,7 @@ import { ArticleCard } from "@/components/cards/article-card";
 import { buildMetadata } from "@/lib/seo";
 import { getAllBrokers, getBrokerBySlug, getBrokerSlugs } from "@/data/brokers";
 import { getArticlesByTag } from "@/data/research";
+import { getSourcesByBroker } from "@/data/sources";
 import type { Broker, FeeAmount } from "@/types";
 
 interface BrokerPageProps {
@@ -213,6 +214,24 @@ export default async function BrokerPage({ params }: BrokerPageProps) {
             ))}
           </div>
         )}
+      </Section>
+
+      <Section id="sources" title="信息来源">
+        <ul className="space-y-2 rounded-lg border p-5">
+          {getSourcesByBroker(broker.slug).map((source) => (
+            <li key={source.url} className="text-sm">
+              <a
+                href={source.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-primary hover:underline"
+              >
+                {source.topic}
+              </a>
+              <span className="text-muted-foreground"> — {source.usedFor}（核对：{source.checkedAt}）</span>
+            </li>
+          ))}
+        </ul>
       </Section>
 
       <Section id="faq" title="FAQ">

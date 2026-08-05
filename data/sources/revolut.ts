@@ -1,0 +1,57 @@
+import type { Source } from "@/types";
+
+export const revolutSources: Source[] = [
+  {
+    brokerSlug: "revolut",
+    entity: "欧洲版（荷兰）",
+    topic: "股票与 ETP 交易费用",
+    url: "https://help.revolut.com/en-NL/help/wealth/stocks/trading-stocks/trading-fees/what-fees-will-i-be-charged-for-my-trading/",
+    usedFor: "核实荷兰版免佣额度与超额佣金",
+    quotedRate: "超额订单为订单额 0.10%，无最低费用",
+    notes: "与爱尔兰页面版本不同——Revolut 各国数字不应混用",
+    checkedAt: "2026-08-05",
+  },
+  {
+    brokerSlug: "revolut",
+    entity: "欧洲版（爱尔兰）",
+    topic: "投资帮助中心总入口",
+    url: "https://help.revolut.com/en-IE/help/wealth/",
+    usedFor: "股票、ETF、监管费、持仓所有权、转户和投资保护等入口",
+    checkedAt: "2026-08-05",
+  },
+  {
+    brokerSlug: "revolut",
+    entity: "欧洲版（爱尔兰）",
+    topic: "可交易产品和 ETF 说明",
+    url: "https://help.revolut.com/en-IE/help/wealth/available-securities-and-instruments/",
+    usedFor: "确认当前支持的股票、ETF、ETP、债券等类别",
+    checkedAt: "2026-08-05",
+  },
+  {
+    brokerSlug: "revolut",
+    entity: "欧洲版（爱尔兰）",
+    topic: "交易前费用披露文件（ex-ante）",
+    url: "https://www.revolut.com/en-IE/legal/ex-ante-costs-and-charges-disclosure/",
+    usedFor: "美国股票、ETF、投资计划和欧洲股票等分类费用文件",
+    checkedAt: "2026-08-05",
+  },
+  {
+    brokerSlug: "revolut",
+    entity: "欧洲版（爱尔兰）",
+    topic: "投资服务条款",
+    url: "https://www.revolut.com/en-IE/legal/investment-services-terms/",
+    usedFor: "核实投资服务的法律条款与托管安排",
+    checkedAt: "2026-08-05",
+  },
+  {
+    brokerSlug: "revolut",
+    entity: "欧洲版（爱尔兰）",
+    accountType: "Standard",
+    topic: "Standard 套餐费用",
+    url: "https://www.revolut.com/en-IE/legal/standard-fees/",
+    usedFor: "核实套餐换汇额度、周末换汇费和公平使用限制",
+    quotedRate: "周末换汇 1%",
+    notes: "必须根据目标用户所在国家切换到相应本地版本",
+    checkedAt: "2026-08-05",
+  },
+];
