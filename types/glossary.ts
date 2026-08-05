@@ -47,7 +47,9 @@ export type GlossaryCategory =
   | "基金与 ETF"
   | "保证金与融资融券"
   | "券商账户与产品"
-  | "Token 与数字资产";
+  | "Token 与数字资产"
+  | "税务"
+  | "申报与合规";
 
 export const GLOSSARY_CATEGORIES: GlossaryCategory[] = [
   "费用与佣金",
@@ -59,4 +61,6 @@ export const GLOSSARY_CATEGORIES: GlossaryCategory[] = [
   "保证金与融资融券",
   "券商账户与产品",
   "Token 与数字资产",
+  "税务",
+  "申报与合规",
 ];

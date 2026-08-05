@@ -27,12 +27,12 @@ export function GlossaryTip({ slug, children }: GlossaryTipProps) {
   return (
     <HoverCard openDelay={150}>
       <HoverCardTrigger asChild>
-        <button
-          type="button"
-          className="cursor-help underline decoration-dotted decoration-muted-foreground/50 underline-offset-4"
+        <Link
+          href={`/glossary/${term.slug}`}
+          className="underline decoration-dotted decoration-muted-foreground/50 underline-offset-4 hover:decoration-foreground"
         >
           {children}
-        </button>
+        </Link>
       </HoverCardTrigger>
       <HoverCardContent className="w-80 space-y-2" align="start">
         <div>
@@ -54,7 +54,7 @@ export function GlossaryTip({ slug, children }: GlossaryTipProps) {
           href={`/glossary/${term.slug}`}
           className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
         >
-          Learn more <ArrowRight className="size-3.5" />
+          查看详细解释 <ArrowRight className="size-3.5" />
         </Link>
       </HoverCardContent>
     </HoverCard>

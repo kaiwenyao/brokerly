@@ -9,6 +9,8 @@ import { fundTerms } from "./funds";
 import { marginTerms } from "./margin";
 import { brokerProductTerms } from "./broker-products";
 import { tokenTerms } from "./tokens";
+import { taxTerms } from "./tax";
+import { taxComplianceTerms } from "./tax-compliance";
 
 /**
  * Glossary registry — CONTENT LAYER.
@@ -25,6 +27,8 @@ const terms: GlossaryTerm[] = [
   ...marginTerms,
   ...brokerProductTerms,
   ...tokenTerms,
+  ...taxTerms,
+  ...taxComplianceTerms,
 ];
 
 export function getAllTerms(): GlossaryTerm[] {

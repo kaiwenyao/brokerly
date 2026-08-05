@@ -8,6 +8,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { InlineTerms } from "@/components/glossary/inline-terms";
 
 /**
  * GFM markdown renderer styled with the design system.
@@ -16,15 +17,32 @@ import {
  */
 function createComponents(): Components {
   let headingIndex = 0;
+
+  // Jargon links once per section: enough for a reader landing mid-article,
+  // without turning every paragraph into a field of dotted underlines.
+  // Relies on the same in-order rendering assumption as headingIndex.
+  let linkedInSection = new Set<string>();
+  const shouldLink = (slug: string): boolean => {
+    if (linkedInSection.has(slug)) return false;
+    linkedInSection.add(slug);
+    return true;
+  };
+  const withTerms = (children: React.ReactNode) => (
+    <InlineTerms shouldLink={shouldLink}>{children}</InlineTerms>
+  );
+
   return {
-    h2: ({ children }) => (
-      <h2
-        id={`h-${headingIndex++}`}
-        className="mb-4 mt-10 scroll-mt-24 text-2xl font-semibold tracking-tight"
-      >
-        {children}
-      </h2>
-    ),
+    h2: ({ children }) => {
+      linkedInSection = new Set();
+      return (
+        <h2
+          id={`h-${headingIndex++}`}
+          className="mb-4 mt-10 scroll-mt-24 text-2xl font-semibold tracking-tight"
+        >
+          {children}
+        </h2>
+      );
+    },
     h3: ({ children }) => (
       <h3
         id={`h-${headingIndex++}`}
@@ -33,14 +51,14 @@ function createComponents(): Components {
         {children}
       </h3>
     ),
-    p: ({ children }) => <p className="my-4 leading-7">{children}</p>,
+    p: ({ children }) => <p className="my-4 leading-7">{withTerms(children)}</p>,
     ul: ({ children }) => (
       <ul className="my-4 list-disc space-y-1.5 pl-6">{children}</ul>
     ),
     ol: ({ children }) => (
       <ol className="my-4 list-decimal space-y-1.5 pl-6">{children}</ol>
     ),
-    li: ({ children }) => <li className="leading-7">{children}</li>,
+    li: ({ children }) => <li className="leading-7">{withTerms(children)}</li>,
     a: ({ children, href }) => (
       <a href={href} className="font-medium text-primary underline underline-offset-4">
         {children}
@@ -62,7 +80,9 @@ function createComponents(): Components {
     tbody: ({ children }) => <TableBody>{children}</TableBody>,
     tr: ({ children }) => <TableRow>{children}</TableRow>,
     th: ({ children }) => <TableHead className="whitespace-nowrap">{children}</TableHead>,
-    td: ({ children }) => <TableCell className="align-top">{children}</TableCell>,
+    td: ({ children }) => (
+      <TableCell className="align-top">{withTerms(children)}</TableCell>
+    ),
   };
 }
 
