@@ -1,14 +1,18 @@
 import type { Article } from "@/types";
+import { brokerFeeComparison2026 } from "./broker-fee-comparison-2026";
+import { eurUsdConversionCost } from "./eur-usd-conversion-cost";
+import { usEtfVsUcitsVsToken } from "./us-etf-vs-ucits-vs-token";
+import { tradingFrequencyCost } from "./trading-frequency-cost";
 
 /**
  * Research article registry — CONTENT LAYER.
- *
- * Articles will live as MDX files in this folder (e.g. `article-001.mdx`)
- * with frontmatter matching the `Article` type. Register metadata here
- * (or replace with a contentlayer/CMS loader later).
+ * One file per article; body is GFM markdown rendered by components/markdown.tsx.
  */
 const articles: Article[] = [
-  // PLACEHOLDER: register research articles here.
+  brokerFeeComparison2026,
+  eurUsdConversionCost,
+  usEtfVsUcitsVsToken,
+  tradingFrequencyCost,
 ];
 
 export function getAllArticles(): Article[] {
@@ -36,4 +40,9 @@ export function getRelatedArticles(slug: string, limit = 3): Article[] {
           a.tags.some((t) => current.tags.includes(t))),
     )
     .slice(0, limit);
+}
+
+export function getArticlesByTag(tag: string, limit?: number): Article[] {
+  const matches = articles.filter((a) => a.tags.includes(tag));
+  return limit ? matches.slice(0, limit) : matches;
 }

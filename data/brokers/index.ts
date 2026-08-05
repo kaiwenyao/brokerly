@@ -1,15 +1,25 @@
 import type { Broker } from "@/types";
+import { ibkr } from "./ibkr";
+import { schwab } from "./schwab";
+import { trading212 } from "./trading212";
+import { tradeRepublic } from "./trade-republic";
+import { robinhood } from "./robinhood";
+import { revolut } from "./revolut";
 
 /**
  * Broker registry — CONTENT LAYER.
  *
- * Add one file per broker in this folder (e.g. `ibkr.ts`) exporting a
- * `Broker` object, then register it here. Pages never hard-code broker
- * data; they read through these accessors so the source can later be
- * swapped for a database, Headless CMS, or API without touching the UI.
+ * One file per broker; register it here. Pages read through these
+ * accessors so the source can later be swapped for a database,
+ * Headless CMS, or API without touching the UI.
  */
 const brokers: Broker[] = [
-  // PLACEHOLDER: import and register broker data files here.
+  ibkr,
+  schwab,
+  trading212,
+  tradeRepublic,
+  robinhood,
+  revolut,
 ];
 
 export function getAllBrokers(): Broker[] {

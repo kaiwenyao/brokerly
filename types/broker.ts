@@ -11,9 +11,19 @@ export interface Broker {
   features: BrokerFeature[];
   pros: string[];
   cons: string[];
+  /** Short display strings for the comparison table */
+  feeSummary: FeeSummary;
   /** 0–5 editorial score, optional until reviews are written */
   rating?: number;
   lastUpdated?: string; // ISO 8601 date
+}
+
+export interface FeeSummary {
+  usStock: string;
+  usEtf: string;
+  fx: string;
+  custody: string;
+  inactivity: string;
 }
 
 export interface BrokerFees {

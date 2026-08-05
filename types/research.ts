@@ -17,7 +17,8 @@ export interface Article {
   updatedAt?: string;
   readingMinutes?: number;
   cover?: string;
-  /** MDX body lives in data/research/<slug>.mdx */
+  /** Markdown body (GFM tables supported) */
+  body: string;
 }
 
 export interface TocItem {

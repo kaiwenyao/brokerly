@@ -17,11 +17,27 @@ export const metadata: Metadata = buildMetadata({
   path: "/",
 });
 
-/** Placeholder FAQ copy — real Q&A supplied later. */
 const HOME_FAQ: FaqItem[] = [
-  { question: "Placeholder question one?", answer: "Placeholder answer — to be supplied." },
-  { question: "Placeholder question two?", answer: "Placeholder answer — to be supplied." },
-  { question: "Placeholder question three?", answer: "Placeholder answer — to be supplied." },
+  {
+    question: "已经有美元，买美股哪家最便宜？",
+    answer:
+      "Schwab US 和 IBKR Lite 的普通网上美股/ETF 交易佣金均为 $0，买入也不产生 SEC/FINRA 卖方监管费，显性成本最低。",
+  },
+  {
+    question: "欧元资金想买真正的 VOO，应该选哪家？",
+    answer:
+      "Trading 212 Invest：官方目录明确列有美国本土 VOO/VTI/SPY/QQQ，佣金 $0，FX 仅 0.15%，且可先换成 USD 余额长期交易，避免每笔重复换汇。",
+  },
+  {
+    question: "Robinhood Europe 的 0.10% 费用是不是最低？",
+    answer:
+      "不能这样横向比较。Robinhood Europe 销售的是 Stock Token 衍生合约而非真实股票/ETF，买入和卖出各收一次 0.10% FX，且不可转户、无投票权。",
+  },
+  {
+    question: "€1,000 换美元，哪条路径最划算？",
+    answer:
+      "工作日且在月度额度内，Revolut 无明确换汇手续费；IBKR 自动换汇约 0.03%（≈€0.30）次之；Schwab 小额换汇约 1%（≈€10）最贵。",
+  },
 ];
 
 export default function HomePage() {

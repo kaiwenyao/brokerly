@@ -25,15 +25,15 @@ export function BrokerCard({ broker, rank }: BrokerCardProps) {
         <div>
           <CardTitle className="text-base">{broker.name}</CardTitle>
           <CardDescription className="line-clamp-1">
-            {broker.summary || "Placeholder summary"}
+            {broker.summary}
           </CardDescription>
         </div>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="flex flex-wrap gap-2">
-          <FeeBadge label="US Stocks" value="—" />
-          <FeeBadge label="ETFs" value="—" />
-          <FeeBadge label="FX" value="—" />
+          <FeeBadge label="美股" value={broker.feeSummary.usStock} />
+          <FeeBadge label="ETF" value={broker.feeSummary.usEtf} />
+          <FeeBadge label="FX" value={broker.feeSummary.fx} />
         </div>
         <Link
           href={`/brokers/${broker.slug}`}

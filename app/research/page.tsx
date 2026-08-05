@@ -13,7 +13,6 @@ export const metadata: Metadata = buildMetadata({
   path: "/research",
 });
 
-const CATEGORIES = ["All", "Guides", "Fee Analysis", "Broker News", "Strategies"];
 const PAGE_SIZE = 9;
 
 interface ResearchPageProps {
@@ -25,6 +24,7 @@ export default async function ResearchPage({ searchParams }: ResearchPageProps) 
   const page = Math.max(1, Number(pageParam ?? "1") || 1);
 
   const articles = getAllArticles();
+  const categories = ["All", ...new Set(articles.map((a) => a.category))];
   const totalPages = Math.max(1, Math.ceil(articles.length / PAGE_SIZE));
   const visible = articles.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
@@ -39,7 +39,7 @@ export default async function ResearchPage({ searchParams }: ResearchPageProps) 
       </header>
 
       <div className="mb-8 flex flex-wrap gap-2">
-        {CATEGORIES.map((category) => (
+        {categories.map((category) => (
           <Badge
             key={category}
             variant={category === "All" ? "default" : "outline"}

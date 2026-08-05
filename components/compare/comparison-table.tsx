@@ -1,4 +1,5 @@
-import type { Broker } from "@/types";
+import Link from "next/link";
+import type { Broker, FeeSummary } from "@/types";
 import {
   Table,
   TableBody,
@@ -13,16 +14,13 @@ interface ComparisonTableProps {
   brokers: Broker[];
 }
 
-/**
- * Broker comparison table. Column definitions are data-driven so new fee
- * dimensions can be added without restructuring the component.
- */
-const COLUMNS: { key: string; label: string; render: (b: Broker) => string }[] = [
-  { key: "usStock", label: "US Stock Commission", render: () => "—" },
-  { key: "usEtf", label: "US ETF Commission", render: () => "—" },
-  { key: "fx", label: "FX Markup", render: () => "—" },
-  { key: "custody", label: "Custody Fee", render: () => "—" },
-  { key: "inactivity", label: "Inactivity Fee", render: () => "—" },
+/** Column definitions are data-driven — add a FeeSummary key to add a column. */
+const COLUMNS: { key: keyof FeeSummary; label: string }[] = [
+  { key: "usStock", label: "美股佣金" },
+  { key: "usEtf", label: "ETF 佣金" },
+  { key: "fx", label: "FX 换汇" },
+  { key: "custody", label: "托管费" },
+  { key: "inactivity", label: "账户闲置费" },
 ];
 
 export function ComparisonTable({ brokers }: ComparisonTableProps) {
@@ -36,22 +34,33 @@ export function ComparisonTable({ brokers }: ComparisonTableProps) {
   }
 
   return (
-    <div className="rounded-lg border">
+    <div className="overflow-x-auto rounded-lg border">
       <Table>
         <TableHeader className="sticky top-16 z-10 bg-background">
           <TableRow>
-            <TableHead className="min-w-40">Broker</TableHead>
+            <TableHead className="min-w-40">券商</TableHead>
             {COLUMNS.map((col) => (
-              <TableHead key={col.key}>{col.label}</TableHead>
+              <TableHead key={col.key} className="whitespace-nowrap">
+                {col.label}
+              </TableHead>
             ))}
           </TableRow>
         </TableHeader>
         <TableBody>
           {brokers.map((broker) => (
             <TableRow key={broker.slug}>
-              <TableCell className="font-medium">{broker.name}</TableCell>
+              <TableCell className="font-medium">
+                <Link
+                  href={`/brokers/${broker.slug}`}
+                  className="hover:underline"
+                >
+                  {broker.name}
+                </Link>
+              </TableCell>
               {COLUMNS.map((col) => (
-                <TableCell key={col.key}>{col.render(broker)}</TableCell>
+                <TableCell key={col.key} className="whitespace-nowrap">
+                  {broker.feeSummary[col.key]}
+                </TableCell>
               ))}
             </TableRow>
           ))}

@@ -2,17 +2,18 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArticleLayout } from "@/components/article/article-layout";
 import { BreadcrumbNav } from "@/components/breadcrumb-nav";
-import { EmptyState } from "@/components/empty-state";
+import { Markdown } from "@/components/markdown";
 import { ArticleCard } from "@/components/cards/article-card";
 import { Section } from "@/components/section";
 import { JsonLd } from "@/components/json-ld";
 import { articleJsonLd, buildMetadata } from "@/lib/seo";
+import { extractToc } from "@/lib/toc";
 import {
+  getAllArticles,
   getArticleBySlug,
   getArticleSlugs,
   getRelatedArticles,
 } from "@/data/research";
-import type { TocItem } from "@/types";
 
 interface ArticlePageProps {
   params: Promise<{ slug: string }>;
@@ -39,9 +40,13 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const article = getArticleBySlug(slug);
   if (!article) notFound();
 
-  /** TOC is extracted from the MDX body once articles exist. */
-  const toc: TocItem[] = [];
+  const toc = extractToc(article.body);
   const related = getRelatedArticles(slug);
+
+  const ordered = getAllArticles();
+  const index = ordered.findIndex((a) => a.slug === slug);
+  const newer = index > 0 ? ordered[index - 1] : undefined;
+  const older = index < ordered.length - 1 ? ordered[index + 1] : undefined;
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
@@ -53,24 +58,21 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         ]}
       />
 
-      <ArticleLayout article={article} toc={toc}>
-        {/* MDX body renders here once data/research/*.mdx exists */}
-        <EmptyState
-          title="Article body placeholder"
-          description="MDX content for this article will render here."
-        />
+      <ArticleLayout
+        article={article}
+        toc={toc}
+        prev={older && { slug: older.slug, title: older.title }}
+        next={newer && { slug: newer.slug, title: newer.title }}
+      >
+        <Markdown body={article.body} />
       </ArticleLayout>
 
-      <Section title="Related posts" className="mt-8">
-        {related.length === 0 ? (
-          <EmptyState title="No related posts yet" />
-        ) : (
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {related.map((a) => (
-              <ArticleCard key={a.slug} article={a} />
-            ))}
-          </div>
-        )}
+      <Section title="相关文章" className="mt-8">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {related.map((a) => (
+            <ArticleCard key={a.slug} article={a} />
+          ))}
+        </div>
       </Section>
     </div>
   );

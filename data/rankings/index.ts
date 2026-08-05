@@ -1,8 +1,13 @@
 import type { Ranking } from "@/types";
+import { eurUsdFxRanking } from "./eur-usd-fx";
+import { usStocksUsdRanking } from "./us-stocks-usd";
+import { eurUsEtfRanking } from "./eur-us-etf";
 
 /** Ranking lists — CONTENT LAYER. See data/brokers. */
 const rankings: Ranking[] = [
-  // PLACEHOLDER: register rankings here.
+  eurUsdFxRanking,
+  usStocksUsdRanking,
+  eurUsEtfRanking,
 ];
 
 export function getAllRankings(): Ranking[] {
