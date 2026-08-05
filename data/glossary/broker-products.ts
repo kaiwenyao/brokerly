@@ -497,7 +497,9 @@ export const brokerProductTerms: GlossaryTerm[] = [
     category: "券商账户与产品",
     definition: "券商在欧洲各国设立的受当地监管的法律实体，其费率与产品清单可能各不相同。",
     explanation:
-      "同一品牌在不同国家的实体可能适用不同的费率、产品范围与投资者保护安排，因此绝不能混用各国页面的数字。Revolut 荷兰版页面列示的超额订单费率为订单额的 0.10% 且无最低费用，与爱尔兰版本不同；Trading 212 欧洲版 FX 为 0.15%，而其澳大利亚实体列示为 0.40%；Trade Republic 在欧元区列 €1，部分国家则以当地货币收取相近固定费（如波兰列示 4 PLN）。本站的信息来源页因此为每条来源单独保存实体与账户类型字段。",
+      "同一品牌在不同国家的实体可能适用不同的费率、产品范围与投资者保护安排，因此绝不能混用各国页面的数字。" +
+      "本站 Revolut 一律采用爱尔兰官方帮助中心与法律页（en-IE），超额佣金为取高(0.25% 或 €1)（Ultra/Trading Pro 为 0.12%）；其他国家页面费率可能不同，不得混用。" +
+      "Trading 212 欧洲版 FX 为 0.15%，而其澳大利亚实体列示为 0.40%；Trade Republic 在欧元区列 €1，部分国家则以当地货币收取相近固定费（如波兰列示 4 PLN）。本站的信息来源页因此为每条来源单独保存实体与账户类型字段。",
     whyExists:
       "欧盟金融监管以成员国授权为基础，各国实体需遵守当地规则并据此设计产品与定价。",
     whenCharged: "非费用；决定适用哪套费率",
@@ -510,7 +512,7 @@ export const brokerProductTerms: GlossaryTerm[] = [
     calculation: null,
     formula: null,
     example:
-      "查询 Revolut 交易费用时，荷兰版与爱尔兰版页面给出的免佣额度与超额费率不同——必须以自己账户所属国家的官方页面为准。",
+      "比较 Revolut 费用时，应打开 en-IE 帮助中心的交易费用页，而不是其他国家子站——本站数字均按爱尔兰页核对。",
     sources: [REVOLUT_SECURITIES, T212_FEES, TR_PRICING],
     updatedAt: "2026-08-05",
   },

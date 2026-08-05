@@ -25,8 +25,8 @@ const RH_TOKENS = {
   url: "https://robinhood.com/eu/en/support/articles/about-stock-tokens/",
 };
 const REVOLUT_FEES = {
-  title: "Revolut — 交易费用（荷兰版）",
-  url: "https://help.revolut.com/en-NL/help/wealth/stocks/trading-stocks/trading-fees/what-fees-will-i-be-charged-for-my-trading/",
+  title: "Revolut — 交易费用（爱尔兰版）",
+  url: "https://help.revolut.com/en-IE/help/wealth/stocks/trading-stocks/trading-fees/what-fees-will-i-be-charged-for-my-trading/",
 };
 const REVOLUT_STANDARD = {
   title: "Revolut — Standard 套餐费用（爱尔兰版）",
@@ -99,7 +99,10 @@ export const feeTerms: GlossaryTerm[] = [
     category: "费用与佣金",
     definition: "对特定产品、特定订单数量或特定渠道免收佣金的安排。",
     explanation:
-      "免佣往往附带条件，必须看清适用边界。Schwab 的 $0 适用于网上自主下单的美国上市股票与 ETF，人工经纪下单则另收约 $25。Revolut 的免佣是按月计次的额度（Standard 1 笔、Plus 3 笔、Premium 5 笔、Metal/Ultra 10 笔），超额后按 0.25% 或 €1 取高（各国方案不同，荷兰版列示为 0.10% 且无最低费用）。IBKR Lite 的零佣金也不覆盖全部情形——夜盘、部分竞价、低价股等特殊订单可能转按 Fixed 费率计收。",
+      "免佣往往附带条件，必须看清适用边界。Schwab 的 $0 适用于网上自主下单的美国上市股票与 ETF，人工经纪下单则另收约 $25。" +
+      "本站 Revolut 口径为爱尔兰官方页面：每月免佣额度 Standard 1 笔、Plus 3 笔、Premium 5 笔、Metal/Ultra 10 笔，适用于股票与 ETP；超额后 Standard–Metal 取高(订单额 0.25%, 最低国家费 €1)，Ultra/Trading Pro 取高(0.12%, €1)。" +
+      "对比表「每月 1–10 笔免费」即指该额度区间；「同左（EU ETF）」表示 ETF/ETP 佣金规则相同，但产品仅限欧盟注册非复杂 ETF，不是美国本土 VOO。" +
+      "额度按账单周期提交的订单计次且不结转。IBKR Lite 的零佣金也不覆盖全部情形——夜盘、部分竞价、低价股等特殊订单可能转按 Fixed 费率计收。",
     whyExists:
       "分层免佣既能提供有吸引力的入门体验，又能把高频或高成本的交易行为引导至付费档位。",
     whenCharged: "非费用；指免收佣金的适用范围",
@@ -112,7 +115,7 @@ export const feeTerms: GlossaryTerm[] = [
     calculation: null,
     formula: null,
     example:
-      "Revolut Standard 用户当月第 1 笔交易免佣，第 2 笔起按 0.25% 或 €1 取高：一笔 €2,675 的订单佣金约为 €6.69。",
+      "爱尔兰 Revolut Standard：当月第 1 笔股票/ETP 免佣，第 2 笔起取高(0.25%, €1)——一笔 €2,675 订单佣金约为 €6.69；Metal 则有 10 笔免佣。",
     sources: [SCHWAB_PRICING, REVOLUT_FEES, IBKR_STOCKS],
     updatedAt: "2026-08-05",
   },

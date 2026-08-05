@@ -39,6 +39,11 @@ export const LABEL_TO_SLUG: Record<string, string> = {
   "Token 记录": "stock-token",
   Token: "stock-token",
 
+  // Compare-table feeSummary values (Revolut Ireland)
+  "每月 1–10 笔免费": "commission-free-trading",
+  "同左（EU ETF）": "ucits-etf",
+  "0% 工作日*": "fx-conversion",
+
   // Feature labels (also covered by FEATURE_KEY_TO_SLUG)
   真实美股: "beneficial-ownership",
   "美国本土 ETF": "us-listed-etf",
