@@ -1,6 +1,5 @@
 import {
   ArrowLeftRight,
-  Calculator,
   CandlestickChart,
   Landmark,
   PieChart,
@@ -33,12 +32,6 @@ const FEATURES = [
     title: "FX Cost Comparison",
     description: "Placeholder — currency conversion markups by broker.",
     href: "/fx",
-  },
-  {
-    icon: Calculator,
-    title: "Interactive Calculator",
-    description: "Placeholder — estimate your total cost per trade.",
-    href: "/calculator",
   },
   {
     icon: Star,

@@ -4,7 +4,6 @@ import {
   BookOpen,
   BookMarked,
   BookA,
-  Calculator,
   CandlestickChart,
   Home,
   Info,
@@ -26,7 +25,6 @@ export const mainNav: NavItem[] = [
   { title: "US Stocks", href: "/stocks", icon: CandlestickChart },
   { title: "US ETFs", href: "/etf", icon: PieChart },
   { title: "FX Cost", href: "/fx", icon: ArrowLeftRight },
-  { title: "Calculator", href: "/calculator", icon: Calculator },
   { title: "Research", href: "/research", icon: BookOpen },
   { title: "Glossary", href: "/glossary", icon: BookA },
   { title: "Sources", href: "/sources", icon: BookMarked },
@@ -45,18 +43,12 @@ export const footerNav: { title: string; items: { title: string; href: string }[
     ],
   },
   {
-    title: "Tools",
-    items: [
-      { title: "Fee Calculator", href: "/calculator" },
-      { title: "Reviews", href: "/reviews" },
-    ],
-  },
-  {
     title: "Content",
     items: [
       { title: "Research", href: "/research" },
       { title: "Glossary", href: "/glossary" },
       { title: "Sources", href: "/sources" },
+      { title: "Reviews", href: "/reviews" },
       { title: "About", href: "/about" },
     ],
   },

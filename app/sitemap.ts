@@ -12,7 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/stocks",
     "/etf",
     "/fx",
-    "/calculator",
     "/research",
     "/sources",
     "/glossary",

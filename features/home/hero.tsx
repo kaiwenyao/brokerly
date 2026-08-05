@@ -20,7 +20,7 @@ export function Hero() {
             <Link href="/brokers">Compare brokers</Link>
           </Button>
           <Button size="lg" variant="outline" asChild>
-            <Link href="/calculator">Fee calculator</Link>
+            <Link href="/fx">FX costs</Link>
           </Button>
         </div>
       </div>
