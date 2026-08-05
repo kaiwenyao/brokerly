@@ -296,4 +296,31 @@ export const fxTerms: GlossaryTerm[] = [
     sources: [ECB_RATES, REVOLUT_STANDARD],
     updatedAt: "2026-08-05",
   },
+  {
+    slug: "ecb",
+    name: "ECB Reference Rate",
+    fullName: "ECB Euro Reference Exchange Rate",
+    abbreviation: "ECB",
+    chineseName: "欧洲央行参考汇率",
+    category: "外汇",
+    definition:
+      "欧洲央行每个工作日公布的欧元对主要货币参考汇率，是衡量券商换汇加点的常用基准。",
+    explanation:
+      "本站费用计算以 ECB 参考汇率作为理论中间价：券商实际换汇率与它的差距就是换汇加点。但要注意，ECB 明确说明参考汇率主要用于信息与估值，并非可保证成交的交易汇率，发布于每个工作日约 16:00 CET。因此实际换到的价格总会在参考汇率基础上有一定加点——比较的对象是加点幅度，而不是追求恰好等于参考汇率。",
+    whyExists:
+      "跨境交易需要一个中立、统一、每日公布的对照基准，ECB 以官方身份提供这一参考。",
+    whenCharged: "非费用，不适用",
+    chargedBy: "不适用（属参考基准）",
+    platforms: ["all"],
+    usOnly: false,
+    appliesToEurope: true,
+    chargedOnBuy: null,
+    chargedOnSell: null,
+    calculation: "换汇加点 ≈ 券商实际汇率相对 ECB 参考汇率的偏离百分比",
+    formula: null,
+    example:
+      "ECB 参考汇率为 €1 = $1.1554 时，某平台实际给出 $1.1537：加点约 0.15%，即每 €1,000 换汇约 €1.5 的隐性成本。",
+    sources: [ECB_RATES],
+    updatedAt: "2026-08-05",
+  },
 ];

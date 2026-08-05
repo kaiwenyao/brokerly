@@ -396,4 +396,58 @@ export const taxTerms: GlossaryTerm[] = [
     sources: [REV_TRADE_TDM, REV_SHARES],
     updatedAt: "2026-08-05",
   },
+  {
+    slug: "withholding-tax",
+    name: "Withholding Tax",
+    fullName: "Withholding Tax",
+    abbreviation: null,
+    chineseName: "预扣税",
+    category: "税务",
+    definition:
+      "在付款环节由付款方先行扣缴的征税机制，股息和利息最常见；被扣的税通常可在年度申报时抵免或退税。",
+    explanation:
+      "预扣税不是一种独立的税种，而是一种征收方式：在你收到钱之前，付款方（派息公司、银行或托管链）按规则先扣下一部分交给税务机关。你的最终税负仍以年度申报为准——申报时按扣税前的毛额计入所得，再把已扣税款作为抵免。跨境投资中可能同时涉及两层预扣：来源国预扣（如美国股息依 W-8BEN 适用协定税率）与爱尔兰的 DWT；前者通常可按税收协定在爱尔兰申报时申请外国税收抵免，因此扣缴凭证要保存好。",
+    whyExists:
+      "在资金流动环节扣税可确保税款不因收款人不申报而流失，是跨境所得最常见的征收保障。",
+    whenCharged: "股息、利息等款项支付时",
+    chargedBy: "派息公司、银行或托管链代相应税务机关扣缴",
+    platforms: ["all"],
+    usOnly: false,
+    appliesToEurope: true,
+    chargedOnBuy: null,
+    chargedOnSell: null,
+    calculation: "付款毛额 × 适用预扣率（国内法或税收协定税率）",
+    formula: null,
+    example:
+      "某美国公司派发股息 $100，按协定预扣 15% 即 $15，实收 $85；爱尔兰申报时按 $100 毛额计入所得，被扣的 $15 可申请外国税收抵免。",
+    sources: [REV_DWT, REV_SHARES],
+    updatedAt: "2026-08-05",
+  },
+  {
+    slug: "loss-harvesting",
+    name: "Tax-Loss Harvesting",
+    fullName: "Tax-Loss Harvesting",
+    abbreviation: null,
+    chineseName: "亏损收割",
+    category: "税务",
+    definition:
+      "在年底前卖出已亏损的持仓以实现资本亏损、用于抵减当年其他资本利得的合规操作。",
+    explanation:
+      "爱尔兰的资本亏损可抵减同年度其他资本利得并向以后年度结转，因此在年底前盘点浮亏持仓并卖出，是降低当年 CGT 的合法手段。两条纪律：一是亏损只能抵减资本利得，不能抵减股息、利息或工资；二是受四周规则限制——卖出后四周内买回同类股票，该亏损可能无法立即使用。此外，基金税制持仓的收益通常也不能用普通资本亏损抵减，亏损收割只对走 CGT 的资产有意义。",
+    whyExists:
+      "税制允许亏损抵减利得以反映真实的净收益，年底的亏损收割只是把这条规则应用到持仓管理上。",
+    whenCharged: "非费用，不适用",
+    chargedBy: "不适用（属税务筹划操作）",
+    platforms: ["all"],
+    usOnly: false,
+    appliesToEurope: true,
+    chargedOnBuy: null,
+    chargedOnSell: null,
+    calculation: "已实现的资本亏损先抵减当年资本利得，余额向以后年度结转",
+    formula: null,
+    example:
+      "某年股票 A 盈利 €4,000、股票 B 浮亏 €3,000：年底前卖出 B 实现亏损，应税利得从 €4,000 降至 €1,000，扣除 €1,270 免税额后当年 CGT 为 €0；但卖出后四周内不能买回 B。",
+    sources: [REV_CGT_CALC, REV_SHARES_TDM],
+    updatedAt: "2026-08-05",
+  },
 ];

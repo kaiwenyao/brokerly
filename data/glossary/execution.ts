@@ -20,6 +20,10 @@ const SEC_TRADE_EXEC = {
   title: "SEC Investor.gov — Trade Execution",
   url: "https://www.investor.gov/introduction-investing/investing-basics/glossary/trade-execution",
 };
+const INVESTOR_NBBO = {
+  title: "SEC Investor.gov — National Best Bid and Offer (NBBO)",
+  url: "https://www.investor.gov/introduction-investing/investing-basics/glossary/national-best-bid-and-offer-nbbo",
+};
 
 export const executionTerms: GlossaryTerm[] = [
   {
@@ -384,6 +388,33 @@ export const executionTerms: GlossaryTerm[] = [
     example:
       "以 FOK 下单买入 1,000 股，但当前限价上只有 900 股可成交：整笔订单被取消，一股也不会成交；若用 IOC 则会成交 900 股。",
     sources: [SEC_ORDERS],
+    updatedAt: "2026-08-05",
+  },
+  {
+    slug: "nbbo",
+    name: "NBBO",
+    fullName: "National Best Bid and Offer",
+    abbreviation: "NBBO",
+    chineseName: "全国最优买卖报价",
+    category: "交易执行",
+    definition:
+      "美国各交易所同一证券最优买价与最优卖价的汇总，是衡量券商执行质量与订单保护规则的基准。",
+    explanation:
+      "美股在多个交易所同时交易，NBBO 把这些场所的最优报价聚合成一个全国统一参照。它的实务意义在于执行质量：成交价格优于当时 NBBO 称为价格改善（price improvement），这是评估订单流付款安排下执行是否划算的关键指标，IBKR 的智能路由与 Schwab 的执行质量报告都以它为基准。散户的限价单也以 NBBO 为参照判断成交可能性。",
+    whyExists:
+      "多场所并存使任何单一交易所的报价都不能代表全市场，需要统一基准来保护投资者免于劣于市场最优价的成交。",
+    whenCharged: "非费用，不适用",
+    chargedBy: "不适用（属市场数据基准）",
+    platforms: ["ibkr", "schwab"],
+    usOnly: true,
+    appliesToEurope: false,
+    chargedOnBuy: null,
+    chargedOnSell: null,
+    calculation: "各交易所最优买价中的最高者，与最优卖价中的最低者",
+    formula: null,
+    example:
+      "某股票 NBBO 为 $100.00 / $100.02：买单在 $100.01 成交即获得 $0.01 的价格改善；若成交于 $100.05，则明显劣于市场。",
+    sources: [INVESTOR_NBBO, SEC_TRADE_EXEC],
     updatedAt: "2026-08-05",
   },
 ];

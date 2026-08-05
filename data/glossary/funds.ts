@@ -28,6 +28,10 @@ const REVOLUT_SECURITIES = {
   title: "Revolut — 可交易产品与工具（爱尔兰版）",
   url: "https://help.revolut.com/en-IE/help/wealth/available-securities-and-instruments/",
 };
+const INVESTOR_ETP = {
+  title: "SEC Investor.gov — Exchange-Traded Products (ETPs)",
+  url: "https://www.investor.gov/introduction-investing/investing-basics/glossary/exchange-traded-products-etps",
+};
 
 export const fundTerms: GlossaryTerm[] = [
   {
@@ -289,6 +293,33 @@ export const fundTerms: GlossaryTerm[] = [
     example:
       "查看某 UCITS ETF 的 KIID：其 “费用” 章节列出的持续费用（ongoing charges）即该基金的年度成本，与券商佣金相互独立。",
     sources: [ESMA_UCITS, ESMA_PRIIPS],
+    updatedAt: "2026-08-05",
+  },
+  {
+    slug: "etp",
+    name: "ETP",
+    fullName: "Exchange-Traded Product",
+    abbreviation: "ETP",
+    chineseName: "交易所交易产品",
+    category: "基金与 ETF",
+    definition:
+      "在交易所上市交易的一类产品总称，涵盖 ETF、ETN 与 ETC；平台的 ETP 投资计划用的就是这个上位概念。",
+    explanation:
+      "ETP 是伞形术语：ETF（基金份额）只是其中最常见的一类，此外还有 ETN（发行人的无担保债务票据，带发行人信用风险）和 ETC（商品敞口）。平台宣传 ETP 免佣时，具体免的是哪一类要看条款——Revolut 的 ETP 投资计划即使用这一口径。下单前应在 KID 中确认买到的究竟是基金份额还是债务票据，两者的权利、风险和税务处理可能不同。",
+    whyExists:
+      "交易所上市的结构化敞口形式日益多样，监管与行业需要一个覆盖全部形态的上位概念。",
+    whenCharged: "非费用，不适用",
+    chargedBy: "不适用",
+    platforms: ["revolut", "trading212", "trade-republic"],
+    usOnly: false,
+    appliesToEurope: true,
+    chargedOnBuy: null,
+    chargedOnSell: null,
+    calculation: null,
+    formula: null,
+    example:
+      "某平台 ETP 投资计划每月一笔免佣：计划内的 ETF 买单免佣；但若标的是 ETN，承担的还有发行人的信用风险，性质与基金份额不同。",
+    sources: [INVESTOR_ETP, ESMA_PRIIPS],
     updatedAt: "2026-08-05",
   },
 ];

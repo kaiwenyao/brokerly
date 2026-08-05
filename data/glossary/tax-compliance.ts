@@ -72,6 +72,14 @@ const IRS_W8BEN = {
   title: "IRS — About Form W-8 BEN",
   url: "https://www.irs.gov/forms-pubs/about-form-w-8-ben",
 };
+const REV_MYACCOUNT = {
+  title: "Revenue — myAccount 个人税务账户",
+  url: "https://www.revenue.ie/en/online-services/services/personal-services/myaccount.aspx",
+};
+const REV_TR1 = {
+  title: "Revenue — Form TR1 个人税务登记表",
+  url: "https://www.revenue.ie/en/employing-people/documents/form-tr1.pdf",
+};
 
 /** Irish filing, registration and information-reporting concepts. */
 export const taxComplianceTerms: GlossaryTerm[] = [
@@ -424,6 +432,168 @@ export const taxComplianceTerms: GlossaryTerm[] = [
     example:
       "以爱尔兰税务居民身份提交有效 W-8BEN 后收到美股股息：美国按协定税率预扣，剩余部分入账，被扣税款在爱尔兰申报时可申请抵免。",
     sources: [IRS_W8BEN],
+    updatedAt: "2026-08-05",
+  },
+  {
+    slug: "tin",
+    name: "TIN",
+    fullName: "Tax Identification Number",
+    abbreviation: "TIN",
+    chineseName: "纳税人识别号",
+    category: "申报与合规",
+    definition:
+      "各国税务机关发放的个人纳税识别号码，是 CRS 信息交换中标识账户持有人的关键字段。",
+    explanation:
+      "券商开户时收集的 TIN 就是你税务居民国的纳税编号——爱尔兰税务居民对应 PPSN。CRS 报告会把 TIN 连同账户余额、股息、利息和处置收入一起交换给对应税务机关，TIN 填错意味着信息被送往错误的国家。在 W-8BEN 上填写的外国 TIN 也是申请协定预扣税率的一部分。",
+    whyExists:
+      "统一的识别号使跨境交换的账户信息能准确匹配到具体纳税人。",
+    whenCharged: "非费用，不适用",
+    chargedBy: "不适用（属身份标识）",
+    platforms: ["all"],
+    usOnly: false,
+    appliesToEurope: true,
+    chargedOnBuy: null,
+    chargedOnSell: null,
+    calculation: "不适用",
+    formula: null,
+    example:
+      "爱尔兰税务居民在券商税务资料页的 TIN 栏填写 PPSN，该账户的 CRS 信息才会被正确交换给 Revenue。",
+    sources: [REV_CRS, REV_PPSN],
+    updatedAt: "2026-08-05",
+  },
+  {
+    slug: "tr1",
+    name: "Form TR1",
+    fullName: "Form TR1 (Tax Registration for Individuals)",
+    abbreviation: "TR1",
+    chineseName: "个人税务登记表",
+    category: "申报与合规",
+    definition:
+      "个人向 Revenue 注册所得税等税种时使用的登记表，也可用 eRegistration 在线服务代替。",
+    explanation:
+      "当非 PAYE 收入超过门槛、需要成为应自行评税人员时，就要先向 Revenue 注册所得税。两条路径：通过 eRegistration 在线注册，或提交 Form TR1。注册只是开通申报义务，不等于被认定为职业交易者——被动投资者同样可能仅因投资收入或离岸基金持仓而需要注册。",
+    whyExists:
+      "税务机关需要先把纳税人登记入册，才能建立申报档案、分配税种并开通 ROS 权限。",
+    whenCharged: "非费用，不适用",
+    chargedBy: "不适用（属登记表格）",
+    platforms: ["all"],
+    usOnly: false,
+    appliesToEurope: true,
+    chargedOnBuy: null,
+    chargedOnSell: null,
+    calculation: "不适用",
+    formula: null,
+    example:
+      "股息与基金收益合计超过 €5,000：通过 eRegistration 注册所得税自行评税，随后即可用 ROS 提交 Form 11。",
+    sources: [REV_TR1, REV_REGISTER, REV_SELF_WHO],
+    updatedAt: "2026-08-05",
+  },
+  {
+    slug: "myaccount",
+    name: "myAccount",
+    fullName: "Revenue myAccount",
+    abbreviation: null,
+    chineseName: "Revenue 个人税务账户",
+    category: "申报与合规",
+    definition:
+      "Revenue 面向个人纳税人的在线门户，PAYE 纳税人用它提交 Form 12、管理税收抵免与申请居住证明。",
+    explanation:
+      "myAccount 与 ROS 是两套入口：工资为主的 PAYE 纳税人日常用 myAccount——提交 Form 12、查看工资单税务记录、申请 Letter of Residence（用于在境外申请协定优惠）；需要提交 Form 11 的自行评税人员则使用 ROS。投资收入未超门槛时，一条 myAccount 的 Form 12 通常就能完成申报，无需接触 ROS。",
+    whyExists:
+      "为数量庞大的 PAYE 纳税人提供轻量的自助渠道，与面向复杂申报的 ROS 分开。",
+    whenCharged: "非费用，不适用",
+    chargedBy: "不适用（属申报渠道）",
+    platforms: ["all"],
+    usOnly: false,
+    appliesToEurope: true,
+    chargedOnBuy: null,
+    chargedOnSell: null,
+    calculation: "不适用",
+    formula: null,
+    example:
+      "全年除工资外只有 €800 股息：登录 myAccount 提交 Form 12 申报这笔股息即可，无需注册 ROS。",
+    sources: [REV_MYACCOUNT, REV_ONLINE],
+    updatedAt: "2026-08-05",
+  },
+  {
+    slug: "pay-and-file",
+    name: "Pay and File",
+    fullName: "Pay and File System",
+    abbreviation: null,
+    chineseName: "申报缴税一体机制",
+    category: "申报与合规",
+    definition:
+      "自行评税的年度总期限：在同一天完成上一税年的申报、上一税年余额税缴纳和本税年初步税缴纳。",
+    explanation:
+      "对自行评税人员，每年 10 月 31 日（或 ROS 延长期限）要同时做三件事，因此首次进入自行评税时的实际付款往往接近上年税额的两倍，这是最常见的现金流意外。经 ROS 在线提交并在线缴款可适用每年公布的延长期限。注意 CGT 有自己更早的缴款期限（12 月 15 日 / 次年 1 月 31 日），不能等 Pay and File。",
+    whyExists:
+      "把申报与缴款合并到单一期限，减少征纳双方的流程次数。",
+    whenCharged: "每年 10 月 31 日，或当年公布的 ROS 延长期限",
+    chargedBy: "爱尔兰税务局（Revenue）",
+    platforms: ["all"],
+    usOnly: false,
+    appliesToEurope: true,
+    chargedOnBuy: null,
+    chargedOnSell: null,
+    calculation: "上期申报 + 上期余额税 + 本期初步税",
+    formula: null,
+    example:
+      "2026 年 10 月 31 日：提交 2025 税年 Form 11、缴清 2025 年余额税，并预缴 2026 年初步税。",
+    sources: [REV_PAY_FILE, REV_PRELIM],
+    updatedAt: "2026-08-05",
+  },
+  {
+    slug: "self-assessment",
+    name: "Self-Assessment",
+    fullName: "Income Tax Self-Assessment",
+    abbreviation: null,
+    chineseName: "自行评税",
+    category: "申报与合规",
+    definition:
+      "纳税人自行计算并申报应纳税额的制度，与工资由雇主代扣的 PAYE 相对应。",
+    explanation:
+      "在自行评税下，计算税款、按期缴纳初步税和余额税、保存记录的责任都在纳税人自己身上，Revenue 事后审核。触发条件通常是成为应自行评税人员：非 PAYE 净收入超过 €5,000 或毛额超过 €30,000，或持有需自行申报的离岸基金等。投资收入是工薪族进入自行评税最常见的原因之一，注册渠道为 eRegistration 或 Form TR1。",
+    whyExists:
+      "工资之外的收入结构多样且只有纳税人自己掌握全貌，由付款方代扣不现实，因此法律把计算与申报责任转移给纳税人。",
+    whenCharged: "非费用，不适用",
+    chargedBy: "不适用（属课税制度）",
+    platforms: ["all"],
+    usOnly: false,
+    appliesToEurope: true,
+    chargedOnBuy: null,
+    chargedOnSell: null,
+    calculation: "每年按 Pay and File 期限提交 Form 11 并缴税",
+    formula: null,
+    example:
+      "有全职工作但年股息与处置收益净额 €8,000：需注册自行评税，每年经 ROS 提交 Form 11 并缴纳余额税与初步税。",
+    sources: [REV_SELF, REV_SELF_GUIDE],
+    updatedAt: "2026-08-05",
+  },
+  {
+    slug: "eea",
+    name: "EEA",
+    fullName: "European Economic Area",
+    abbreviation: "EEA",
+    chineseName: "欧洲经济区",
+    category: "申报与合规",
+    definition:
+      "欧盟成员国加冰岛、列支敦士登、挪威组成的经济区；爱尔兰基金税制中等同境外基金的认定范围与之直接相关。",
+    explanation:
+      "对投资者而言 EEA 不只是一个地理名词，而是一条税务分界线：注册在 EEA 或合格协定国、与爱尔兰基金等同的基金（包括多数 UCITS ETF），通常落入 38% 退出税与八年视同处置制度；范围之外的基金可能按完全不同的规则课税。判断手上 ETF 的税务处理时，注册地是否在 EEA 内是首先要确认的事实之一。",
+    whyExists:
+      "EEA 协议把欧盟单一市场规则延伸给三个非欧盟国家，税务与基金监管资格常以 EEA 为界。",
+    whenCharged: "非费用，不适用",
+    chargedBy: "不适用（属区域概念）",
+    platforms: ["all"],
+    usOnly: false,
+    appliesToEurope: true,
+    chargedOnBuy: null,
+    chargedOnSell: null,
+    calculation: "不适用",
+    formula: null,
+    example:
+      "在爱尔兰或卢森堡（EEA 内）注册的 UCITS ETF 通常都落入基金退出税制度；一只非 EEA 且非合格协定国的基金则需要另行分类。",
+    sources: [REV_OFFSHORE],
     updatedAt: "2026-08-05",
   },
 ];
