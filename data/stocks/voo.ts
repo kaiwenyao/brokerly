@@ -11,7 +11,7 @@ export const voo: Instrument = {
   exchange: "NYSE Arca",
   currency: "USD",
   costs: [
-    { brokerSlug: "ibkr", commission: "$0（Lite）", totalEstimate: "$709.35", fxNote: "Pro Fixed 为 $710.35，Tiered 约 $709.70 起" },
+    { brokerSlug: "ibkr", commission: "Tiered $0.35 起 / Fixed $1", totalEstimate: "$709.70 起（Tiered）", fxNote: "Fixed 为 $710.35" },
     { brokerSlug: "schwab", commission: "$0", totalEstimate: "$709.35", fxNote: "网上交易" },
     { brokerSlug: "trading212", commission: "$0", totalEstimate: "$709.35", fxNote: "官方目录列示 NYSE VOO；USD 余额结算" },
     { brokerSlug: "trade-republic", commission: "—", totalEstimate: "公开目录未确认", fxNote: "未找到官方明确确认可交易 VOO" },

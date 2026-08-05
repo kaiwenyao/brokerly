@@ -13,7 +13,7 @@ export const tradingFrequencyCost: Article = {
   body: `
 ## 低频：每月少于十笔
 
-**美元资金：** Schwab US 和 IBKR Lite 显性费用最优——AAPL、VOO 等普通网上订单均为零佣金。两者差异更多在执行、功能和订单流模式，而非账单佣金。
+**美元资金：** Schwab 显性费用最优——AAPL、VOO 等普通网上订单为零佣金。IBKR Pro 每笔最低 $0.35（Tiered）或 $1（Fixed），在低频小额场景下成本占比偏高；其价值在于执行控制与换汇成本，而非最低佣金。
 
 **欧元资金买真实美国 ETF：** Trading 212 通常最优——一次 0.15% 换汇后，用 USD 余额买卖 VOO/VTI/SPY/QQQ 不再重复换汇。Robinhood 的 0.10% 看似更低，但提供的是 Token，且买入卖出各发生一次 FX。
 
@@ -24,16 +24,16 @@ export const tradingFrequencyCost: Article = {
 | 平台 | 中频成本表现 |
 |---|---|
 | Schwab US | 合资格网上美股/ETF 仍 $0 |
-| IBKR Lite | 普通合资格交易仍 $0，注意特殊时段订单规则 |
 | Trading 212 | USD 余额交易仍 $0，最适合预先一次换汇 |
-| IBKR Pro Tiered | 每单至少约 $0.35 + 外部费，换取透明路由和返佣 |
+| IBKR Pro Tiered | 每单至少约 $0.35 + 外部费；被动成交可获交易所返佣 |
+| IBKR Pro Fixed | 每笔最低 $1，费用全包、成本可精确预估 |
 | Trade Republic | 20 笔约 €20 固定费，另有价差 |
 | Revolut Standard | 仅首笔免费，之后多数订单至少 €1 或 0.25% |
 | Robinhood EU | 无佣金，但 0.10% FX 随换手率重复累积 |
 
 ## 高频：每月超过五十笔
 
-显性费用上 **Schwab US、IBKR Lite 和预持 USD 的 Trading 212** 依然最便宜。IBKR Pro Tiered 适合看重直接路由、流动性返佣和执行控制的用户，但 100 笔小单仅最低佣金就约 $35（未含外部费用）。
+显性费用上 **Schwab 和预持 USD 的 Trading 212** 依然最便宜。IBKR Pro Tiered 适合看重直接路由、流动性返佣和执行控制的用户，但 100 笔小单仅最低佣金就约 $35（未含外部费用）；若多为被动挂单成交，交易所返佣可抵减其中一部分。
 
 其余三家的成本会迅速恶化：
 
@@ -43,6 +43,6 @@ export const tradingFrequencyCost: Article = {
 
 ## 结论
 
-频率本身不改变"已有美元选 Schwab/IBKR Lite、欧元买美国 ETF 选 Trading 212"的基本结论，但它会放大各平台的收费结构差异：**固定费（Trade Republic €1）惩罚高频小单，比例费（Revolut 0.25%）惩罚高频大单，重复 FX（Robinhood 0.10%×2）惩罚一切换手。**
+频率本身不改变"已有美元选 Schwab、欧元买美国 ETF 选 Trading 212"的基本结论，但它会放大各平台的收费结构差异：**固定费（Trade Republic €1）惩罚高频小单，比例费（Revolut 0.25%）惩罚高频大单，重复 FX（Robinhood 0.10%×2）惩罚一切换手。**
 `,
 };

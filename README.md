@@ -52,7 +52,7 @@ types/                   domain models (Broker, Instrument, Article, Ranking)
 | Route | Purpose |
 |---|---|
 | `/` | Hero, feature cards, comparison teaser, latest research, popular brokers, FAQ |
-| `/brokers` | Compare table + filter sidebar + search + sort + compare drawer (sticky header) |
+| `/brokers` | Compare table + filter sidebar + search + sort + compare drawer |
 | `/brokers/[broker]` | Unified broker template: summary, trading cost, ETF, FX, pros/cons, research, FAQ, related |
 | `/stocks` | Symbol directory (search) |
 | `/stocks/[symbol]` | Per-symbol cost across brokers + fee breakdown |

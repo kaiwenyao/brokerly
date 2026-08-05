@@ -37,7 +37,7 @@ export function ComparisonTable({ brokers }: ComparisonTableProps) {
   return (
     <div className="overflow-x-auto rounded-lg border">
       <Table>
-        <TableHeader className="sticky top-16 z-10 bg-background">
+        <TableHeader className="bg-muted/40">
           <TableRow>
             <TableHead className="min-w-40">券商</TableHead>
             {COLUMNS.map((col) => (

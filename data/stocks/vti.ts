@@ -7,7 +7,7 @@ export const vti: Instrument = {
   exchange: "NYSE Arca",
   currency: "USD",
   costs: [
-    { brokerSlug: "ibkr", commission: "$0（Lite）", totalEstimate: "支持", fxNote: "真实美国本土 ETF" },
+    { brokerSlug: "ibkr", commission: "Tiered $0.35 起 / Fixed $1", totalEstimate: "支持", fxNote: "真实美国本土 ETF" },
     { brokerSlug: "schwab", commission: "$0", totalEstimate: "支持" },
     { brokerSlug: "trading212", commission: "$0", totalEstimate: "支持", fxNote: "官方目录列示 NYSE VTI" },
     { brokerSlug: "trade-republic", commission: "—", totalEstimate: "公开目录未确认" },

@@ -21,7 +21,7 @@ const HOME_FAQ: FaqItem[] = [
   {
     question: "已经有美元，买美股哪家最便宜？",
     answer:
-      "Schwab US 和 IBKR Lite 的普通网上美股/ETF 交易佣金均为 $0，买入也不产生 SEC/FINRA 卖方监管费，显性成本最低。",
+      "Schwab 网上美股/ETF 交易佣金为 $0，且买入不产生 SEC/FINRA 卖方监管费，显性成本最低；Trading 212 在使用 USD 余额时同样为 $0。IBKR Pro 每笔最低 $0.35（Tiered）或 $1（Fixed）。",
   },
   {
     question: "欧元资金想买真正的 VOO，应该选哪家？",

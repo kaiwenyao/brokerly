@@ -11,7 +11,7 @@ export const aapl: Instrument = {
   exchange: "Nasdaq",
   currency: "USD",
   costs: [
-    { brokerSlug: "ibkr", commission: "$0（Lite）", totalEstimate: "$309.12", fxNote: "USD 余额无需换汇；Pro Fixed 为 $310.12，Tiered 约 $309.47 起" },
+    { brokerSlug: "ibkr", commission: "Tiered $0.35 起 / Fixed $1", totalEstimate: "$309.47 起（Tiered）", fxNote: "USD 余额无需换汇；Fixed 为 $310.12" },
     { brokerSlug: "schwab", commission: "$0", totalEstimate: "$309.12", fxNote: "网上交易" },
     { brokerSlug: "trading212", commission: "$0", totalEstimate: "$309.12", fxNote: "选择 USD 余额结算" },
     { brokerSlug: "trade-republic", commission: "€1", totalEstimate: "EUR 成交额 + €1", fxNote: "以交易场所 EUR 报价成交，另加价差/第三方费" },
