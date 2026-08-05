@@ -75,6 +75,6 @@ types/                   domain models (Broker, Instrument, Article, Ranking)
 ## Develop
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
