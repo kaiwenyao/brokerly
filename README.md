@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Brokerly
 
-## Getting Started
+Compare global broker trading fees — US stocks, ETFs, FX costs and more.
 
-First, run the development server:
+**Status: framework only.** All pages render placeholders; no real broker
+data, fees, articles, or rankings exist yet.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Stack
+
+Next.js 15 (App Router) · TypeScript · TailwindCSS v4 · shadcn/ui · Lucide ·
+React Server Components · next-themes (dark mode)
+
+## Architecture: Content / Presentation separation
+
+Pages never hard-code content. They read from the **content layer** in
+`data/` through accessor functions (`getAllBrokers`, `getArticleBySlug`, …).
+To add content later you only add data files — or swap the accessors for a
+database / Headless CMS / API — without touching any UI.
+
+```
+data/                    ← CONTENT (fill this in later)
+  brokers/               one file per broker, registered in index.ts
+  stocks/                stock & ETF instruments
+  research/              articles (MDX + metadata registry)
+  rankings/              ranking lists
+
+app/                     ← PRESENTATION (routes, RSC pages)
+  page.tsx               /            Home
+  brokers/               /brokers + /brokers/[broker]
+  stocks/                /stocks + /stocks/[symbol]
+  etf/                   /etf
+  fx/                    /fx
+  calculator/            /calculator
+  research/              /research + /research/[slug]
+  reviews/               /reviews + /reviews/[broker]
+  about/                 /about
+  sitemap.ts robots.ts   SEO routes
+
+components/              reusable UI (navbar, footer, tables, cards, badges,
+                         FAQ, TOC, compare drawer, calculator shell, …)
+components/ui/           shadcn/ui primitives
+features/home/           page-level composed sections for the home page
+config/                  site metadata + navigation
+lib/seo.ts               Metadata builder + JSON-LD (Breadcrumb, Article,
+                         FAQ, Organization) + <JsonLd> component
+hooks/                   client hooks (compare selection, …)
+types/                   domain models (Broker, Instrument, Article, Ranking)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Routes & responsibilities
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Route | Purpose |
+|---|---|
+| `/` | Hero, feature cards, comparison teaser, latest research, popular brokers, FAQ |
+| `/brokers` | Compare table + filter sidebar + search + sort + compare drawer (sticky header) |
+| `/brokers/[broker]` | Unified broker template: summary, trading cost, ETF, FX, pros/cons, research, FAQ, related |
+| `/stocks` | Symbol directory (search) |
+| `/stocks/[symbol]` | Per-symbol cost across brokers + fee breakdown |
+| `/etf` | ETF directory |
+| `/fx` | FX markup comparison + currency pairs |
+| `/calculator` | Tabbed calculator shell (US stock / ETF / FX) |
+| `/research` | Blog index: categories, pagination |
+| `/research/[slug]` | Article: TOC, author card, tags, prev/next, related posts |
+| `/reviews` | Review index |
+| `/reviews/[broker]` | Review template: verdict, fees tested, platform, FAQ |
+| `/about` | Mission, methodology, contact |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Adding content
 
-## Learn More
+1. Create `data/brokers/<slug>.ts` exporting a `Broker` (see `types/broker.ts`).
+2. Register it in `data/brokers/index.ts`.
+3. Done — list page, detail page (static params), sitemap, and reviews all
+   pick it up automatically.
 
-To learn more about Next.js, take a look at the following resources:
+## Develop
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm install
+npm run dev
+```
