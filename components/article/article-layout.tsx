@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { Article, TocItem } from "@/types";
@@ -35,6 +36,18 @@ export function ArticleLayout({ article, toc, prev, next, children }: ArticleLay
             {article.author.name} · {article.publishedAt}
             {article.readingMinutes && ` · ${article.readingMinutes} min read`}
           </p>
+          {article.cover && (
+            <div className="relative aspect-[16/9] overflow-hidden rounded-xl bg-muted">
+              <Image
+                src={article.cover}
+                alt=""
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 720px"
+                priority
+              />
+            </div>
+          )}
         </header>
 
         <div className="prose-neutral dark:prose-invert max-w-none">

@@ -10,6 +10,7 @@ export const eurUsdConversionCost: Article = {
   author: { slug: "brokerly-research", name: "Brokerly 研究团队", role: "Research" },
   publishedAt: "2026-08-05",
   readingMinutes: 6,
+  cover: "/images/research/eur-usd-conversion-cost.jpg",
   body: `
 ## 可比假设
 

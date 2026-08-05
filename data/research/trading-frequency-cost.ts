@@ -10,6 +10,7 @@ export const tradingFrequencyCost: Article = {
   author: { slug: "brokerly-research", name: "Brokerly 研究团队", role: "Research" },
   publishedAt: "2026-08-05",
   readingMinutes: 5,
+  cover: "/images/research/trading-frequency-cost.jpg",
   body: `
 ## 低频：每月少于十笔
 

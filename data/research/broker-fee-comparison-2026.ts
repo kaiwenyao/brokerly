@@ -14,6 +14,7 @@ export const brokerFeeComparison2026: Article = {
   },
   publishedAt: "2026-08-05",
   readingMinutes: 12,
+  cover: "/images/research/broker-fee-comparison-2026.jpg",
   body: `
 ## 口径与前提
 

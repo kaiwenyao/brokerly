@@ -10,6 +10,7 @@ export const usEtfVsUcitsVsToken: Article = {
   author: { slug: "brokerly-research", name: "Brokerly 研究团队", role: "Research" },
   publishedAt: "2026-08-05",
   readingMinutes: 5,
+  cover: "/images/research/us-etf-vs-ucits-vs-token.jpg",
   body: `
 ## 三种"标普 500 敞口"的本质区别
 
