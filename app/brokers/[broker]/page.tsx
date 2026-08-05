@@ -19,6 +19,7 @@ import {
 import { Check, Minus, X } from "lucide-react";
 import { BrokerCard } from "@/components/cards/broker-card";
 import { ArticleCard } from "@/components/cards/article-card";
+import { TermLabel } from "@/components/glossary/term-label";
 import { buildMetadata } from "@/lib/seo";
 import { getAllBrokers, getBrokerBySlug, getBrokerSlugs } from "@/data/brokers";
 import { getArticlesByTag } from "@/data/research";
@@ -73,7 +74,9 @@ function FeeRows({ broker }: { broker: Broker }) {
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.label}>
-              <TableCell className="font-medium">{row.label}</TableCell>
+              <TableCell className="font-medium">
+                <TermLabel label={row.label} />
+              </TableCell>
               <TableCell>{row.value}</TableCell>
               <TableCell className="text-muted-foreground">{row.note ?? "—"}</TableCell>
             </TableRow>
@@ -149,7 +152,9 @@ export default async function BrokerPage({ params }: BrokerPageProps) {
             <TableBody>
               {broker.features.map((feature) => (
                 <TableRow key={feature.key}>
-                  <TableCell className="font-medium">{feature.label}</TableCell>
+                  <TableCell className="font-medium">
+                    <TermLabel label={feature.label} termKey={feature.key} />
+                  </TableCell>
                   <TableCell>
                     {feature.supported ? (
                       <span className="inline-flex items-center gap-1 text-green-600 dark:text-green-400">
