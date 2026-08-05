@@ -35,7 +35,7 @@ export const ibkr: Broker = {
       { label: "自动换汇", value: "汇率 ±0.03%", note: "无另收佣金，主要用于覆盖交易所需货币" },
       { label: "手动现货 FX", value: "0.20 个基点起", note: "最低 $2/单" },
       { label: "SEC Section 31（卖出）", value: "$0.0000206 × 卖出金额", note: "每百万美元 $20.60；Fixed 已含，Tiered 转嫁" },
-      { label: "FINRA TAF（卖出）", value: "$0.000195/股", note: "每笔最高 $9.79" },
+      { label: "FINRA TAF（卖出）", value: "按 FINRA 当期费率/股", note: "FINRA 规则手册列 $0.000166/股、上限 $8.30；券商费率页多列 $0.000195/股、上限 $9.79，以成交单为准" },
       { label: "清算/CAT（Tiered）", value: "约 $0.00020/股 + $0.000003/股", note: "Fixed 已包含" },
       { label: "市场数据", value: "Cboe One / IEX 免费", note: "完整 NBBO 或专业数据包需订阅" },
       { label: "股票融资利率", value: "基准 +1.5%–2.5%", note: "Lite 约 +2.5%，Pro 起步约 +1.5%" },

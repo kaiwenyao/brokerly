@@ -30,7 +30,7 @@ export const trading212: Broker = {
       { label: "EUR→USD 换汇", value: "现货汇率 +0.15%", note: "可持有 EUR 与 USD，预先换汇后不再每笔重复转换" },
       { label: "银行卡/Apple Pay/Google Pay 入金", value: "累计前 €2,000 免费", note: "超过后收 0.7%；银行转账免费" },
       { label: "SEC Section 31（卖出）", value: "以订单预览为准", note: "官方帮助页仍显示旧值 $0.0000278，与 2026-04 起现行 $0.0000206 不一致" },
-      { label: "FINRA TAF（卖出）", value: "$0.000195 × 卖出股数" },
+      { label: "FINRA TAF（卖出）", value: "$0.000195 × 卖出股数", note: "为 Trading 212 帮助页列示值；FINRA 规则手册当前列 $0.000166/股、上限 $8.30" },
       { label: "收入来源", value: "0.15% FX + 股票出借", note: "CFD 点差属于另一产品，不纳入本站口径" },
     ],
   },

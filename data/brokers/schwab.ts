@@ -28,7 +28,7 @@ export const schwab: Broker = {
     extra: [
       { label: "小额换汇档位", value: "约 1%", note: "Schwab Global Account 公布档位；其他路径依交易而异" },
       { label: "SEC Section 31（卖出）", value: "按现行费率转嫁", note: "买入不收" },
-      { label: "FINRA TAF（卖出）", value: "$0.000195/股", note: "每笔最高 $9.79" },
+      { label: "FINRA TAF（卖出）", value: "按 FINRA 当期费率/股", note: "FINRA 规则手册列 $0.000166/股、上限 $8.30；券商费率页多列 $0.000195/股，以成交单为准" },
       { label: "人工经纪下单", value: "$25", note: "自动电话约 $5" },
       { label: "股票融资利率", value: "约 10.075%–11.825%", note: "按借款金额分档" },
       { label: "其他", value: "ADR、外国证券另计", note: "特殊服务可能另收费" },
