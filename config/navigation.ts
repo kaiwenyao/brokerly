@@ -3,6 +3,7 @@ import {
   ArrowLeftRight,
   BookOpen,
   BookMarked,
+  BookA,
   Calculator,
   CandlestickChart,
   Home,
@@ -27,6 +28,7 @@ export const mainNav: NavItem[] = [
   { title: "FX Cost", href: "/fx", icon: ArrowLeftRight },
   { title: "Calculator", href: "/calculator", icon: Calculator },
   { title: "Research", href: "/research", icon: BookOpen },
+  { title: "Glossary", href: "/glossary", icon: BookA },
   { title: "Sources", href: "/sources", icon: BookMarked },
   { title: "Reviews", href: "/reviews", icon: Star },
   { title: "About", href: "/about", icon: Info },
@@ -53,6 +55,7 @@ export const footerNav: { title: string; items: { title: string; href: string }[
     title: "Content",
     items: [
       { title: "Research", href: "/research" },
+      { title: "Glossary", href: "/glossary" },
       { title: "Sources", href: "/sources" },
       { title: "About", href: "/about" },
     ],

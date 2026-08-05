@@ -3,6 +3,7 @@ import { siteConfig } from "@/config/site";
 import { getBrokerSlugs } from "@/data/brokers";
 import { getInstrumentSymbols } from "@/data/stocks";
 import { getArticleSlugs } from "@/data/research";
+import { getTermSlugs } from "@/data/glossary";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -14,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/calculator",
     "/research",
     "/sources",
+    "/glossary",
     "/reviews",
     "/about",
   ].map((path) => ({
@@ -34,5 +36,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${siteConfig.url}/research/${slug}`,
   }));
 
-  return [...staticRoutes, ...brokerRoutes, ...stockRoutes, ...articleRoutes];
+  const glossaryRoutes = getTermSlugs().map((slug) => ({
+    url: `${siteConfig.url}/glossary/${slug}`,
+  }));
+
+  return [
+    ...staticRoutes,
+    ...brokerRoutes,
+    ...stockRoutes,
+    ...articleRoutes,
+    ...glossaryRoutes,
+  ];
 }

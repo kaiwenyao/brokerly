@@ -13,6 +13,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { TermLabel } from "@/components/glossary/term-label";
 import { buildMetadata } from "@/lib/seo";
 import { getInstrumentBySymbol, getInstrumentSymbols } from "@/data/stocks";
 import { getBrokerBySlug } from "@/data/brokers";
@@ -67,9 +68,9 @@ export default async function StockSymbolPage({ params }: StockPageProps) {
               <TableHeader>
                 <TableRow>
                   <TableHead className="min-w-40">券商</TableHead>
-                  <TableHead>佣金</TableHead>
+                  <TableHead><TermLabel label="佣金" /></TableHead>
                   <TableHead>总成本估算</TableHead>
-                  <TableHead>FX / 备注</TableHead>
+                  <TableHead><TermLabel label="FX / 备注" /></TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>

@@ -9,6 +9,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { EmptyState } from "@/components/empty-state";
+import { TermLabel } from "@/components/glossary/term-label";
 
 interface ComparisonTableProps {
   brokers: Broker[];
@@ -41,7 +42,7 @@ export function ComparisonTable({ brokers }: ComparisonTableProps) {
             <TableHead className="min-w-40">券商</TableHead>
             {COLUMNS.map((col) => (
               <TableHead key={col.key} className="whitespace-nowrap">
-                {col.label}
+                <TermLabel label={col.label} />
               </TableHead>
             ))}
           </TableRow>
