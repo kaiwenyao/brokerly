@@ -26,13 +26,17 @@ export const tokenTerms: GlossaryTerm[] = [
     slug: "stock-token",
     name: "Stock Token",
     fullName: "Classic Stock Token",
-    abbreviation: null,
+    abbreviation: "Token",
     chineseName: "股票代币",
     category: "Token 与数字资产",
     definition:
-      "Robinhood Europe 发行的、跟踪某股票或 ETF 价格的衍生合约，不是该证券本身。",
+      "Robinhood Europe 发行的、跟踪某股票或 ETF 价格的衍生合约，不是该证券本身；对比表里标 “Token” 即提醒产品不可与真实美股/ETF 佣金直接比较。",
     explanation:
-      `${OWNERSHIP_NOTE}与真正股票的区别在于：你不持有标的证券的任何权益，交易对手是 Robinhood 而非市场；与 ETF 的区别在于：ETF 份额背后有基金实际持有的一篮子资产，而 Token 背后只有一份合约债权。官方说明 Token 依 MiFID II 作为衍生合约提供，无股东投票权，且 “不能发送到其他钱包或平台”。公司行动处理期间，相关 Token 的交易通常会被暂停。`,
+      `${OWNERSHIP_NOTE}与真正股票的区别在于：你不持有标的证券的任何权益，交易对手是 Robinhood 而非市场；与 ETF 的区别在于：ETF 份额背后有基金实际持有的一篮子资产，而 Token 背后只有一份合约债权。官方说明 Token 依 MiFID II 作为衍生合约提供，无股东投票权，且 “不能发送到其他钱包或平台”。公司行动处理期间，相关 Token 的交易通常会被暂停。` +
+      "本站对比表中的写法含义如下：" +
+      "「$0（Token）」= 交易本身不收佣金，但买到的是 Stock Token，不是真实美股；" +
+      "「—（仅 Token）」= 不提供可对比的美国本土 ETF 份额，因此 ETF 佣金栏不适用（即便 app 有跟踪 ETF 价格的 Token，仍不是 ETF）；" +
+      "「Token 记录」= 没有传统证券托管，持仓只是平台上的合约记录。真正成本主要在买卖各收一次的 0.10% FX。",
     whyExists:
       "Token 结构让欧洲用户能以极低门槛获得美国股票的价格敞口，同时规避了跨境证券持有与交收的复杂性；对发行方而言则是可控的合约负债。",
     whenCharged: "买入和卖出时各自动换汇一次并收取 0.10% FX 费",
@@ -45,7 +49,7 @@ export const tokenTerms: GlossaryTerm[] = [
     calculation: "每次交易按成交金额收取 0.10% 的换汇费，无单独佣金",
     formula: "单次成本 = 成交金额 × 0.10%；完整买卖一轮约 0.20%",
     example:
-      "买入 €1,000 的 AAPL Token 支付约 €1 的 FX 费；卖出时再付约 €1。整轮名义 FX 成本约 0.20%，且你从未持有过一股 AAPL。",
+      "对比表写 “$0（Token）” 时：买入 €1,000 的 AAPL Token 佣金为 €0，但仍付约 €1 的 FX；卖出再付约 €1。整轮约 0.20% FX，且从未持有过一股 AAPL。写 “—（仅 Token）” 时：不能把它当成 VOO 等真实 ETF 的 $0 佣金。",
     sources: [RH_ABOUT, RH_FAQ, RH_BUYSELL],
     updatedAt: "2026-08-05",
   },

@@ -60,7 +60,7 @@ export function ComparisonTable({ brokers }: ComparisonTableProps) {
               </TableCell>
               {COLUMNS.map((col) => (
                 <TableCell key={col.key} className="whitespace-nowrap">
-                  {broker.feeSummary[col.key]}
+                  <TermLabel label={broker.feeSummary[col.key]} />
                 </TableCell>
               ))}
             </TableRow>

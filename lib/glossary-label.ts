@@ -33,6 +33,12 @@ export const LABEL_TO_SLUG: Record<string, string> = {
   ETF: "etf",
   FX: "fx",
 
+  // Compare-table feeSummary values (Robinhood Token caveats)
+  "$0（Token）": "stock-token",
+  "—（仅 Token）": "stock-token",
+  "Token 记录": "stock-token",
+  Token: "stock-token",
+
   // Feature labels (also covered by FEATURE_KEY_TO_SLUG)
   真实美股: "beneficial-ownership",
   "美国本土 ETF": "us-listed-etf",
