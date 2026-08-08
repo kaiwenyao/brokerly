@@ -30,20 +30,20 @@ export const irelandEtfDcaPlatformComparison2026: Article = {
   readingMinutes: 16,
   cover: "/images/research/ireland-etf-dca-platform-comparison-2026.jpg",
   body: `
-## 本文采用的账户条件
+## 账户区域与费用口径
 
-这次不再把“居住在爱尔兰”误写成“所有券商都是爱尔兰区”。本文按以下实际账户组合比较，费率与规则核对截至 **2026 年 8 月 9 日**：
+比较基于以下账户区域与收费方案，费率与规则核对截至 **2026 年 8 月 9 日**：
 
-| 平台 | 本文采用的账户/区域 | 采用的费用口径 |
+| 平台 | 账户/区域 | 费用口径 |
 |---|---|---|
-| **Interactive Brokers** | 用户确认的美国账户；**IBKR Pro** | 美国上市股票/ETF 的 Pro Fixed 与 Tiered 费率 |
+| **Interactive Brokers** | 美国账户；**IBKR Pro** | 美国上市股票/ETF 的 Pro Fixed 与 Tiered 费率 |
 | **Charles Schwab** | 美国券商账户 / Schwab International | 美国上市 ETF 的在线费率，并叠加爱尔兰居住地产品限制 |
 | **Trading 212** | 爱尔兰 / 欧洲 Invest | 欧洲版 0.15% FX、Pie 与 AutoInvest |
 | **Trade Republic** | 爱尔兰 / 欧洲账户 | 爱尔兰 Savings Plan 与 €1 普通交易费率 |
 | **Revolut** | 爱尔兰投资账户 | Revolut Securities Europe UAB 的 Investment Plan |
 | Lightyear、DEGIRO | 爱尔兰账户，作为补充比较 | 各自爱尔兰费率 |
 
-这里必须把四个概念拆开：
+判断产品权限与交易成本时，需要区分以下四个概念：
 
 1. **IBKR Pro 是收费方案**，不是监管意义上的 Professional Client。
 2. **IBKR LLC / IBIE 是签约法律实体**，应以当前 Customer Agreement 或账户确认信为准。
@@ -52,11 +52,11 @@ export const irelandEtfDcaPlatformComparison2026: Article = {
 
 IBKR 的 [Pro 与 Lite 费用说明](https://www.interactivebrokers.com/en/pricing/commissions-home.php?menu=A)把 Pro 定义为可选 Fixed/Tiered 的定价方案；IBKR 的 [PRIIPs 说明](https://www.interactivebrokers.com/campus/trading-lessons/trading-overseas-with-ibkr/)则按 EEA/UK Retail Client 判断 KID 限制。两者不是同一件事。
 
-## 针对这组账户的结论
+## 核心结论
 
-- **如果你的 IBKR 订单权限实际允许 VOO/QQQ：IBKR Pro 是这组账户中最适合自动定投美国 ETF 的平台。** VOO、QQQ 都在 IBKR 的[可碎股证券清单](https://www.interactivebrokers.com/download/fracshare_stk.csv)中，可按固定金额日/周/双周/月/季/年自动买入。IBKR 官方对 Recurring Investments 的明确答复采用 Standard Fixed commission；两只 ETF 每月各买一次、每笔至少 $100 时，显性佣金约 **$24/年**，最终以创建计划时预览和成交单为准。
-- **IBKR Pro 不等于 PRIIPs 豁免。** IBKR 官方同时写明：EEA/UK 零售客户在美国 ETF 没有 KID 时会被阻止买入。若你的账户能实际创建并成交 VOO/QQQ 计划，本文按该真实权限计算；若出现 KID/PRIIPs 报错，就必须走 UCITS 路径。不要仅凭“美国账户”或“Pro”推断权限。
-- **Charles Schwab 虽然是美国券商，但不适合你新增定投 VOO/QQQ。** Schwab 官方明确写：居住在 EEA/UK 的客户只能持有或卖出现有美国注册 ETP，不能首次买入或追加；限制按居住地，不按券商总部。UCITS ETF 需由 Schwab Global specialist 电话下单，每笔 **$50**，也没有自选 ETF 自动定投的公开支持。见 [Schwab ETF FAQ](https://international.schwab.com/investment-products/etf-trading/how-do-etfs-work)。
+- **IBKR 账户实际允许 VOO/QQQ 时，IBKR Pro 是最适合自动定投美国 ETF 的平台。** VOO、QQQ 都在 IBKR 的[可碎股证券清单](https://www.interactivebrokers.com/download/fracshare_stk.csv)中，可按固定金额日/周/双周/月/季/年自动买入。IBKR 官方对 Recurring Investments 的明确答复采用 Standard Fixed commission；两只 ETF 每月各买一次、每笔至少 $100 时，显性佣金约 **$24/年**，最终以创建计划时预览和成交单为准。
+- **IBKR Pro 不等于 PRIIPs 豁免。** IBKR 官方同时写明：EEA/UK 零售客户在美国 ETF 没有 KID 时会被阻止买入。账户能够创建并成交 VOO/QQQ 计划时，费用按该账户的实际权限计算；若出现 KID/PRIIPs 报错，则需改用 UCITS ETF。不能仅凭“美国账户”或“Pro”推断产品权限。
+- **Charles Schwab 不适合爱尔兰居民新增定投 VOO/QQQ。** Schwab 官方明确写：居住在 EEA/UK 的客户只能持有或卖出现有美国注册 ETP，不能首次买入或追加；限制按居住地，不按券商总部。UCITS ETF 需由 Schwab Global specialist 电话下单，每笔 **$50**，也没有自选 ETF 自动定投的公开支持。见 [Schwab ETF FAQ](https://international.schwab.com/investment-products/etf-trading/how-do-etfs-work)。
 - **爱尔兰区自动定投 UCITS ETF，Trading 212 与 Trade Republic 是第一梯队。** Trading 212 适合用 Pie 按比例投入多只基金；Trade Republic 合资格 Savings Plan 买入执行费为 €0。Revolut 也可用，但只有带 Investment Plan 标记的 ETP 才免佣，准确清单要在 app 内确认。
 - **Lightyear 是很强的补充选项；DEGIRO 不适合全自动。** Lightyear 的 EUR ETF Plan 可零交易费、零 FX 自动投入；DEGIRO 官方不提供 ETF 自动买入，只能自动入金后手动交易。
 
@@ -75,7 +75,7 @@ Schwab 的说法更直接：其[国际 ETF 页面](https://international.schwab.
 - $0 commission 不等于该订单有购买资格
 - IBKR Pro 不等于 MiFID Professional Client
 
-如果你登录 IBKR 后确实能建立 VOO/QQQ Recurring Investment，最可靠的记录是保存订单预览、成交单、当前 Customer Agreement 与 Client Category；本文把它作为你的账户实际权限处理，不把它泛化成所有爱尔兰居民的标准权限。
+IBKR 账户能够建立并成交 VOO/QQQ Recurring Investment 时，应保存订单预览、成交单、当前 Customer Agreement 与 Client Category。该结果只代表该账户的实际权限，不能泛化为所有爱尔兰居民的标准权限。
 
 ## VOO、QQQ 与其他美国指数 ETF 的基金费用
 
@@ -126,10 +126,10 @@ VOO、VTI 与 VT 的费率来自 Vanguard 的 [VOO](https://investor.vanguard.co
 
 IBKR 的[定投功能说明](https://www.interactivebrokers.com/campus/trading-lessons/using-ibkrs-recurring-investments-feature/)确认可按固定金额与多种频率执行，且只有可碎股证券合资格；[Fact Sheet](https://www.interactivebrokers.com/en/general/about/ibkr-fact-sheet.php)列出 24,047 只可碎股股票或 ETF。Trading 212 规则见 [Pies & AutoInvest](https://helpcentre.trading212.com/hc/en-us/articles/30661163244317-Pies-AutoInvest-Introduction)与[主货币限制](https://helpcentre.trading212.com/hc/en-us/articles/34159237080861-Can-I-choose-the-currency-in-which-to-buy-sell-assets-for-Invest-accounts)。Trade Republic 规则见[创建 Savings Plan](https://support.traderepublic.com/en-ie/768)与[费用说明](https://support.traderepublic.com/en-ie/760-What-are-savings-plans)。Revolut 规则见[Investment Plans](https://help.revolut.com/en-IE/help/wealth/stocks/getting-started-with-etf-s/etfs-investment-plans/)。
 
-三家欧洲平台也不能只写一个模糊的“EU”标签：
+三家欧洲平台的账户实体与产品范围如下：
 
-- Trading 212 当前支持国家表把 Ireland 放在欧洲实体范围，但历史账户可能属于不同欧洲实体；可按其[官方指引](https://helpcentre.trading212.com/hc/en-us/articles/4403189221649-Where-can-I-see-which-entity-my-account-is-registered-under)在 app 菜单底部确认。公开目录能查到 [SPYL](https://www.trading212.com/trading-instruments/invest/SPYL.NL)、[CSPX](https://www.trading212.com/trading-instruments/invest/CSPX.GB)和 [EQQQ](https://www.trading212.com/trading-instruments/invest/EQQQ.IT)，但是否对你的实体开放、是否能加入计划仍以登录后的 app 为准。
-- Trade Republic 本文只用 en-IE 页面。其他国家帮助页出现的 1,500、1,800 或 2,000+ ETF 不能直接当作爱尔兰当前数量；应在爱尔兰 app 中寻找 Save 标记。
+- Trading 212 的账户实体应按其[官方指引](https://helpcentre.trading212.com/hc/en-us/articles/4403189221649-Where-can-I-see-which-entity-my-account-is-registered-under)在 app 菜单底部确认。公开目录能查到 [SPYL](https://www.trading212.com/trading-instruments/invest/SPYL.NL)、[CSPX](https://www.trading212.com/trading-instruments/invest/CSPX.GB)和 [EQQQ](https://www.trading212.com/trading-instruments/invest/EQQQ.IT)，但是否对对应实体开放、是否能加入计划仍以登录后的 app 为准。
+- Trade Republic 爱尔兰区域的公开信息以 en-IE 页面为准；其他国家帮助页出现的 1,500、1,800 或 2,000+ ETF 不代表爱尔兰当前数量。定投资格应在爱尔兰 app 中通过 Save 标记确认。
 - Revolut 爱尔兰投资账户由 Revolut Securities Europe UAB 提供。两只 ETF 都有 Investment Plan 标记时年度买入佣金为 €0；如果产品不合资格，则回到套餐免费额度与普通佣金规则，不能继续假设 €0。
 
 ## IBKR Pro 的费用要分自动与手动
@@ -146,21 +146,21 @@ IBKR 的[定投功能说明](https://www.interactivebrokers.com/campus/trading-l
 
 **12 × [min($1, VOO 月投入 × 1%) + min($1, QQQ/QQQM 月投入 × 1%)]**
 
-IBKR 当前美国股票/ETF 费率见[官方佣金表](https://www.interactivebrokers.com/en/pricing/commissions-stocks.php)。Recurring 的收费说明在功能页不同年份的官方回复中存在“Standard Fixed”和较宽泛的“Standard Commissions”两种措辞，因此本文按较明确、较保守的 Fixed 口径估算，最终以你的计划预览和 statement 为准。
+IBKR 当前美国股票/ETF 费率见[官方佣金表](https://www.interactivebrokers.com/en/pricing/commissions-stocks.php)。Recurring 的年度成本按 Standard Fixed 口径估算，最终以计划预览和 statement 为准。
 
-还有一个容易漏掉的现金问题：如果 IBKR 是 margin account、你只有 EUR 而没有足够 USD，官方在 Recurring Investments 页面说明可能建立 USD margin loan，而不是自动换汇。更稳妥的做法是提前把 EUR 合并换成 USD；IBKR 手动现货 FX 为 0.20 个基点起、最低约 $2/单，频繁小额换汇会被最低费主导。
+还有一个容易漏掉的现金问题：如果 IBKR 是 margin account、账户只有 EUR 而没有足够 USD，官方在 Recurring Investments 页面说明可能建立 USD margin loan，而不是自动换汇。更稳妥的做法是提前把 EUR 合并换成 USD；IBKR 手动现货 FX 为 0.20 个基点起、最低约 $2/单，频繁小额换汇会被最低费主导。
 
 ## 为什么不建议用 Schwab 买 UCITS 定投
 
-Schwab 的美国上市股票/ETF在线佣金确实是 $0，但该价格对你要买的 VOO/QQQ 没有用，因为爱尔兰居住地先阻止新增购买。
+Schwab 的美国上市股票/ETF 在线佣金是 $0，但爱尔兰居住地限制会先阻止 VOO/QQQ 的新增购买。
 
 Schwab 给 EEA 居民的替代路径是 UCITS ETF，但官方要求通过 Global Investing specialist 电话下单，每笔收 **$50 foreign transaction fee**。两只 ETF 每月各买一次就是：
 
 **24 × $50 = $1,200/年**
 
-这还不含基金 TER、价差和换汇。Schwab 的 Automatic Investment Plan 官方资料只覆盖共同基金，没有公开支持 VOO、QQQ 或自选 UCITS ETF 自动定投。若你只是保留已有 VOO/QQQ，Schwab 可以继续作为持有与卖出平台；若要新增月投，它在这组平台中没有成本优势。
+这还不含基金 TER、价差和换汇。Schwab 的 Automatic Investment Plan 官方资料只覆盖共同基金，没有公开支持 VOO、QQQ 或自选 UCITS ETF 自动定投。已有 VOO/QQQ 可继续由 Schwab 持有或卖出；新增月投没有成本优势。
 
-Schwab One 以 USD 运作。其[个人价格指南](https://www.schwab.com/legal/schwab-pricing-guide-for-individual-investors)显示 incoming wire 不收费，但非美元转换可能有较高加点；Schwab Global Account 单次换汇低于 $100,000 的公开档位为 1%。不要为了 $0 交易佣金忽略入金与换汇成本。
+Schwab One 以 USD 运作。其[个人价格指南](https://www.schwab.com/legal/schwab-pricing-guide-for-individual-investors)显示 incoming wire 不收费，但非美元转换可能有较高加点；Schwab Global Account 单次换汇低于 $100,000 的公开档位为 1%。平台总成本还需计入入金与换汇费用。
 
 ## 三种可执行方案
 
@@ -172,7 +172,7 @@ Schwab One 以 USD 运作。其[个人价格指南](https://www.schwab.com/legal
 - 预先准备 USD，避免意外形成 margin loan
 - 两只每月各一笔，平台佣金按公开 Fixed 口径约 $24/年
 
-这比用 QQQ 的基金费用略低。若你需要 QQQ 的期权与极高盘中流动性，再选择 QQQ；纯长期定投优先比较 QQQM。
+该组合的基金费用略低于使用 QQQ。需要 QQQ 的期权与极高盘中流动性时再选择 QQQ；纯长期定投优先比较 QQQM。
 
 ### 方案 B：IBKR 出现 KID/PRIIPs 拒单
 
@@ -199,8 +199,8 @@ Schwab One 以 USD 运作。其[个人价格指南](https://www.schwab.com/legal
 5. 对 Trading 212、Trade Republic、Revolut，使用爱尔兰账户逐只按 ISIN 核对真实 ETF、EUR 上市代码与计划资格。
 6. 记录每批买入日期、金额、ISIN、费用与汇率。爱尔兰税务居民仍按爱尔兰税法申报，券商位于美国不会改变税务居住地；详见本站[爱尔兰投资税务指南](/research/ireland-investment-tax)。
 
-## 研究方法
+## 资料口径
 
-本次修订把问题拆成：账户实体与监管分类、美国券商的产品权限、IBKR Pro 自动/手动费用、三家爱尔兰平台的定投费率、美国 ETF 与 UCITS ETF 内部费用五部分。只采用监管机构、券商与基金发行人的官方资料，并把无法从公开网页确认的账户级权限标为“以实际订单预览/app 为准”。
+研究覆盖账户实体与监管分类、美国券商的产品权限、IBKR Pro 自动/手动费用、三家爱尔兰平台的定投费率，以及美国 ETF 与 UCITS ETF 内部费用。事实依据限于监管机构、券商与基金发行人的官方资料；无法从公开网页确认的账户级权限统一标为“以实际订单预览/app 为准”。
 `,
 };
