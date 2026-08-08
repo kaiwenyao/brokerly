@@ -16,9 +16,9 @@ export const tradingFrequencyCost: Article = {
 
 **美元资金：** Schwab 显性费用最优——AAPL、VOO 等普通网上订单为零佣金。IBKR Pro 每笔最低 $0.35（Tiered）或 $1（Fixed），在低频小额场景下成本占比偏高；其价值在于执行控制与换汇成本，而非最低佣金。
 
-**欧元资金买真实美国 ETF：** Trading 212 通常最优——一次 0.15% 换汇后，用 USD 余额买卖 VOO/VTI/SPY/QQQ 不再重复换汇。Robinhood 的 0.10% 看似更低，但提供的是 Token，且买入卖出各发生一次 FX。
+**爱尔兰账户定投美国指数：** 通常应买有 KID 的 UCITS ETF，而不是直接买 VOO/VTI/SPY/QQQ。选择 EUR 交易代码后，Trading 212 AutoInvest 与 Trade Republic Savings Plan 的合资格买入都可为 €0；Robinhood 的 0.10% 路径提供的是 Token，不是 ETF 份额。
 
-**只定投 UCITS ETF：** Revolut 每月免费订单或符合条件的 ETP 投资计划可能零佣；Trade Republic 每笔 €1 适合合并成较少、较大的订单，不适合大量 €10–€50 手动碎股单。
+**只定投 UCITS ETF：** Trading 212 AutoInvest、Trade Republic Savings Plan 与 Revolut 合资格 ETP Investment Plan 都可免买入佣金。Trade Republic 的 €1 是普通手动交易与卖出费用，不适用于 Savings Plan 的买入执行。
 
 ## 中频：每月十至五十笔
 
@@ -28,7 +28,7 @@ export const tradingFrequencyCost: Article = {
 | Trading 212 | USD 余额交易仍 $0，最适合预先一次换汇 |
 | IBKR Pro Tiered | 每单至少约 $0.35 + 外部费；被动成交可获交易所返佣 |
 | IBKR Pro Fixed | 每笔最低 $1，费用全包、成本可精确预估 |
-| Trade Republic | 20 笔约 €20 固定费，另有价差 |
+| Trade Republic | 20 笔手动交易约 €20；合资格 Savings Plan 买入执行 €0，另有价差 |
 | Revolut Standard | 仅首笔免费，之后多数订单至少 €1 或 0.25% |
 | Robinhood EU | 无佣金，但 0.10% FX 随换手率重复累积 |
 
@@ -39,11 +39,11 @@ export const tradingFrequencyCost: Article = {
 其余三家的成本会迅速恶化：
 
 - **Revolut**（Standard–Metal）：免费额度后 0.25% 或最低 €1，频繁小单快速累积；Ultra/Trading Pro 的 0.12% 较低但仍按成交额计费，还要算月度计划成本
-- **Trade Republic**：€1 固定费使 100 笔订单至少约 €100 明确成本
+- **Trade Republic**：100 笔普通手动订单至少约 €100；Savings Plan 买入不按该口径收费
 - **Robinhood Europe**：每轮完整买卖约两次 0.10% FX，100% 换手一次约 0.20% 名义 FX 成本，且持有的是 Token
 
 ## 结论
 
-频率本身不改变"已有美元选 Schwab、欧元买美国 ETF 选 Trading 212"的基本结论，但它会放大各平台的收费结构差异：**固定费（Trade Republic €1）惩罚高频小单，比例费（Revolut 0.25%）惩罚高频大单，重复 FX（Robinhood 0.10%×2）惩罚一切换手。**
+频率会放大平台收费结构的差异：**普通手动订单的固定费惩罚高频小单，比例费惩罚高频大单，重复 FX 惩罚一切换手。** 对长期定投者，应把自动计划的专属费率与手动交易费率分开比较；爱尔兰账户买美国指数则优先选择 EUR 计价 UCITS ETF。
 `,
 };

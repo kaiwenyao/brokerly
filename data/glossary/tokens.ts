@@ -309,9 +309,9 @@ export const tokenTerms: GlossaryTerm[] = [
     calculation: null,
     formula: null,
     example:
-      "在 Trading 212 持有的 VOO 由托管安排下的实际 ETF 份额支持，托管费为零；在 Robinhood Europe 持有的 Token 则没有对应的被托管证券。",
+      "在 Trading 212 Invest 持有的合资格 UCITS ETF 由证券托管安排保管；在 Robinhood Europe 持有的 Token 则没有对应的被托管 ETF 份额。",
     sources: [RH_ABOUT, RH_FAQ],
-    updatedAt: "2026-08-05",
+    updatedAt: "2026-08-08",
   },
   {
     slug: "wallet",

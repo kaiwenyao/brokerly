@@ -266,9 +266,9 @@ export const fxTerms: GlossaryTerm[] = [
     calculation: null,
     formula: null,
     example:
-      "在 Trading 212 用 0.15% 一次性把 €10,000 换成 $11,537，之后买卖 VOO、AAPL 全部以美元结算：无论交易 5 次还是 50 次，换汇成本都只发生过一次。",
+      "在 Trading 212 用 0.15% 一次性把 €10,000 换成美元，之后买卖合资格的 USD 计价股票时可用 USD 余额结算：无论交易 5 次还是 50 次，换汇成本都只发生过一次。",
     sources: [T212_MULTI, T212_FEES],
-    updatedAt: "2026-08-05",
+    updatedAt: "2026-08-08",
   },
   {
     slug: "foreign-exchange",

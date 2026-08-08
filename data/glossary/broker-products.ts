@@ -302,9 +302,9 @@ export const brokerProductTerms: GlossaryTerm[] = [
     calculation: "换汇金额 × 0.15%",
     formula: null,
     example:
-      "以 USD 余额买入 1 股 VOO：佣金 $0、FX $0，总支出 $709.35，与美国本土券商持平。",
+      "在爱尔兰账户用 EUR 余额买入 €500 的 EUR 计价 VUAA：佣金与 FX 都为 €0；VOO 公共产品页则不代表 EEA 零售账户获准买入。",
     sources: [T212_FEES],
-    updatedAt: "2026-08-05",
+    updatedAt: "2026-08-08",
   },
   {
     slug: "cfd-account",
@@ -328,9 +328,9 @@ export const brokerProductTerms: GlossaryTerm[] = [
     calculation: null,
     formula: null,
     example:
-      "在 Trading 212 Invest 买入 VOO 得到真实 ETF 份额并可享分红；在 CFD 账户 “买入 VOO” 只是与券商订立价格合约，长期持有还会累积隔夜利息。",
+      "在 Trading 212 Invest 买入合资格 VUAA 得到真实 UCITS ETF 份额；在 CFD 账户交易同一指数只是与券商订立价格合约，长期持有还会累积隔夜利息。",
     sources: [T212_FEES],
-    updatedAt: "2026-08-05",
+    updatedAt: "2026-08-08",
   },
   {
     slug: "isa",

@@ -20,6 +20,10 @@ const TR_EXPOST = {
   title: "Trade Republic — 交易后成本信息（Ex-post）",
   url: "https://support.traderepublic.com/en-fi/809-What-is-the-ex_post-cost-information",
 };
+const TR_SAVINGS = {
+  title: "Trade Republic — Savings Plan 费用",
+  url: "https://support.traderepublic.com/en-ie/760-What-are-savings-plans",
+};
 const RH_TOKENS = {
   title: "Robinhood Europe — About Stock Tokens",
   url: "https://robinhood.com/eu/en/support/articles/about-stock-tokens/",
@@ -47,7 +51,7 @@ export const feeTerms: GlossaryTerm[] = [
     category: "费用与佣金",
     definition: "券商为执行一笔证券买卖订单而向客户收取的服务费。",
     explanation:
-      "佣金是最传统、也最容易比较的券商收费项目，计价方式主要有三种：按笔固定（如 Trade Republic 的每笔 €1）、按股数计算并设上下限（如 IBKR Pro Fixed 的每股 $0.005、最低 $1、最高成交额的 1%），以及按成交金额的百分比（如 Revolut 超出免费额度后的 0.25%）。零佣金并不等于零成本——Trading 212 佣金为零但收 0.15% 换汇费，IBKR Lite 佣金为零但通过订单流付款获得收入。",
+      "佣金是最传统、也最容易比较的券商收费项目，计价方式主要有三种：按笔固定（如 Trade Republic 普通手动交易每笔 €1；Savings Plan 买入为 €0）、按股数计算并设上下限（如 IBKR Pro Fixed 的每股 $0.005、最低 $1、最高成交额的 1%），以及按成交金额的百分比（如 Revolut 超出免费额度后的 0.25%）。零佣金并不等于零成本——Trading 212 外币交易收 0.15% 换汇费，IBKR Lite 佣金为零但通过订单流付款获得收入。",
     whyExists:
       "券商需要为订单路由、执行、清算、托管和客服等环节的成本与利润来源收费，佣金是其中最直接的一种。",
     whenCharged: "下单成交时按笔收取，买入和卖出通常都收",
@@ -60,9 +64,9 @@ export const feeTerms: GlossaryTerm[] = [
     calculation: "按笔固定、按股数（含最低/最高限额）或按成交金额百分比",
     formula: "固定费；或 股数 × 每股费率（受最低/最高限约束）；或 成交金额 × 费率",
     example:
-      "买入 1 股 AAPL（$309.12）：Schwab 与 IBKR Lite 佣金 $0；IBKR Pro Fixed 因触及最低佣金收 $1（占本金 0.32%）；Trade Republic 收 €1。同样是 “每笔 $1”，在 1 股订单上的成本占比远高于 100 股订单。",
-    sources: [IBKR_STOCKS, SCHWAB_PRICING, TR_PRICING, REVOLUT_FEES],
-    updatedAt: "2026-08-05",
+      "买入 1 股 AAPL（$309.12）：Schwab 与 IBKR Lite 佣金 $0；IBKR Pro Fixed 因触及最低佣金收 $1（占本金 0.32%）；Trade Republic 手动交易收 €1，但合资格 Savings Plan 买入为 €0。",
+    sources: [IBKR_STOCKS, SCHWAB_PRICING, TR_PRICING, TR_SAVINGS, REVOLUT_FEES],
+    updatedAt: "2026-08-08",
   },
   {
     slug: "zero-commission",
@@ -86,7 +90,7 @@ export const feeTerms: GlossaryTerm[] = [
     calculation: null,
     formula: null,
     example:
-      "以欧元买 $1,000 的 VOO：Trading 212 佣金 $0，但换汇产生约 0.15%（约 €1.30）成本；Robinhood Europe 佣金 $0，但买入和卖出各产生一次 0.10% FX，且买到的是 Token 而非 ETF 份额。",
+      "以欧元买 €1,000 的 EUR 计价 VUAA：Trading 212 佣金与 FX 都为 €0，但仍有买卖价差和基金内部 0.07% OCF；零佣金不代表零总成本。",
     sources: [IBKR_STOCKS, T212_FEES, RH_TOKENS],
     updatedAt: "2026-08-05",
   },
@@ -141,9 +145,9 @@ export const feeTerms: GlossaryTerm[] = [
     calculation: "佣金 + 结算/清算费 + 监管费（卖出）+ 换汇费 + 隐含价差",
     formula: null,
     example:
-      "用欧元在 Trading 212 买入 $709.35 的 VOO：佣金 $0 + 换汇约 0.15%（约 €0.92）= 约 €614.87；同样订单在 Trade Republic 则是 EUR 成交额 + €1 结算费 + 价差。",
-    sources: [T212_FEES, TR_EXPOST],
-    updatedAt: "2026-08-05",
+      "用欧元在 Trading 212 AutoInvest 买入 €500 的 EUR 计价 VUAA：佣金与 FX 均为 €0，但仍有价差；同一产品在 Trade Republic Savings Plan 买入执行同样为 €0，普通手动订单则通常另收 €1。",
+    sources: [T212_FEES, TR_EXPOST, TR_SAVINGS],
+    updatedAt: "2026-08-08",
   },
   {
     slug: "broker-fee",
@@ -178,12 +182,12 @@ export const feeTerms: GlossaryTerm[] = [
     abbreviation: null,
     chineseName: "结算费",
     category: "费用与佣金",
-    definition: "完成证券交收所产生的费用，Trade Republic 以每笔 €1 的形式明确收取。",
+    definition: "完成证券交收所产生的费用；Trade Republic 普通手动交易与卖出通常每笔收 €1，但 Savings Plan 买入执行费为 €0。",
     explanation:
-      "结算指成交后证券与资金实际过户的过程，涉及中央证券存管机构与清算机构，会产生实际成本。多数券商把该成本包含在佣金或自行吸收，Trade Republic 则选择把它单列为 “每笔交易 1 欧元的外部结算成本”，并在交易前（ex-ante）与交易后（ex-post）成本报告中披露。关键影响在于：这是固定费用，与订单金额无关，因此小额订单的费率占比极高。",
+      "结算指成交后证券与资金实际过户的过程，涉及中央证券存管机构与清算机构，会产生实际成本。多数券商把该成本包含在佣金或自行吸收，Trade Republic 普通手动交易则单列每笔 €1 外部结算成本，并在交易前（ex-ante）与交易后（ex-post）成本报告中披露。合资格 Savings Plan 的买入执行不收这 €1；未来卖出通常仍收。",
     whyExists:
       "证券交收依赖中央存管与清算基础设施，这些机构按笔或按量向券商收费，券商可选择转嫁或吸收。",
-    whenCharged: "每笔成交时收取，买入和卖出都收；碎股订单同样收取",
+    whenCharged: "普通手动买卖通常每笔收取；Savings Plan 买入执行为 €0",
     chargedBy: "Trade Republic 代外部结算机构收取",
     platforms: ["trade-republic"],
     usOnly: false,
@@ -191,11 +195,11 @@ export const feeTerms: GlossaryTerm[] = [
     chargedOnBuy: true,
     chargedOnSell: true,
     calculation: "按笔固定，与订单金额无关",
-    formula: "每笔 €1（部分国家以当地货币计价，如波兰列示 4 PLN）",
+    formula: "普通手动订单每笔 €1；Savings Plan 买入 €0",
     example:
-      "€1,000 的 ETF 订单：€1 固定费相当于 0.10%；但 €10 的碎股订单同样收 €1，相当于立即承担 10% 的固定交易成本。",
-    sources: [TR_PRICING, TR_EXPOST],
-    updatedAt: "2026-08-05",
+      "€1,000 的手动 ETF 订单：€1 固定费相当于 0.10%；€10 手动碎股单则相当于 10%。若同一 ETF 可加入 Savings Plan，计划买入执行费为 €0。",
+    sources: [TR_PRICING, TR_EXPOST, TR_SAVINGS],
+    updatedAt: "2026-08-08",
   },
   {
     slug: "clearing-fee",

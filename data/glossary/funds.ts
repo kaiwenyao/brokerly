@@ -16,10 +16,6 @@ const ESMA_UCITS = {
   title: "ESMA — UCITS 指令与投资者信息",
   url: "https://www.esma.europa.eu/esmas-activities/investor-protection/ucits",
 };
-const T212_FEES = {
-  title: "Trading 212 — Invest、ISA 与 SIPP 的费用",
-  url: "https://helpcentre.trading212.com/hc/en-us/articles/11471996799517-What-are-the-fees-in-the-Invest-ISAs-and-SIPP",
-};
 const TR_EXPOST = {
   title: "Trade Republic — 交易后成本信息（Ex-post）",
   url: "https://support.traderepublic.com/en-fi/809-What-is-the-ex_post-cost-information",
@@ -70,22 +66,22 @@ export const fundTerms: GlossaryTerm[] = [
     category: "基金与 ETF",
     definition: "在美国注册并在美国交易所上市的 ETF，如 VOO、VTI、SPY、QQQ。",
     explanation:
-      "美国本土 ETF 具有美国 ISIN（US 开头）、美国基金法律实体，以美元在 NYSE Arca 或 Nasdaq 交易，投资者持有的是该基金的实际份额。本站六家平台中，IBKR、Schwab 与 Trading 212 明确支持这类产品——Trading 212 官方产品目录列有 VOO、VTI、QQQ（ISIN US46090E1038）等；Revolut 不提供美国本土 ETF；Trade Republic 的公开目录未确认；Robinhood Europe 只可能提供跟踪其价格的 Token。",
+      "美国本土 ETF 具有美国 ISIN（US 开头）、美国基金法律实体，以美元在 NYSE Arca 或 Nasdaq 交易。对爱尔兰等 EEA 零售客户，PRIIPs 要求销售前提供 KID，而美国发行人通常不提供 EU 版本，因此普通账户一般不能新买 VOO、VTI、SPY、QQQ。IBKR 与 Schwab 的美国账户可支持这些产品，但不能把其权限套用到爱尔兰账户；Trading 212 公共目录出现产品也不代表登录账户获准买入；Robinhood Europe 只可能提供跟踪其价格的 Token。",
     whyExists:
       "美国是全球规模最大、费用率最低的 ETF 市场，许多投资者因此明确要求持有美国本土产品。",
     whenCharged: "交易时按券商费率；持有期间按费用率",
     chargedBy: "券商 + 基金管理人",
-    platforms: ["ibkr", "schwab", "trading212"],
-    usOnly: false,
-    appliesToEurope: true,
+    platforms: ["ibkr", "schwab"],
+    usOnly: true,
+    appliesToEurope: false,
     chargedOnBuy: true,
     chargedOnSell: true,
     calculation: null,
     formula: null,
     example:
-      "欧元资金买真实 VOO 的最优组合是 Trading 212：佣金 $0 + 一次性 0.15% 换汇；Revolut 则完全不提供该产品，只能选择 UCITS 替代品。",
-    sources: [SEC_ETF, T212_FEES],
-    updatedAt: "2026-08-05",
+      "爱尔兰零售客户想跟踪 S&P 500，可研究 SPYL、VUAA、CSPX 等带 KID 的 UCITS ETF；想跟踪 Nasdaq-100，可研究 ANAU、CNDX、EQQQ/EQAC，而不是把公共 VOO/QQQ 页面当作可买证明。",
+    sources: [SEC_ETF, ESMA_PRIIPS],
+    updatedAt: "2026-08-08",
   },
   {
     slug: "ucits-etf",

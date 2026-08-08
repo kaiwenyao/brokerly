@@ -12,6 +12,15 @@ export const tradeRepublicSources: Source[] = [
   },
   {
     brokerSlug: "trade-republic",
+    entity: "爱尔兰版",
+    topic: "Savings Plan 频率与费用",
+    url: "https://support.traderepublic.com/en-ie/760-What-are-savings-plans",
+    usedFor: "核实合资格储蓄计划买入执行费 €0、可用频率与卖出通常 €1",
+    quotedRate: "Savings Plan 买入 €0；卖出通常 €1",
+    checkedAt: "2026-08-08",
+  },
+  {
+    brokerSlug: "trade-republic",
     entity: "欧洲版（芬兰）",
     topic: "交易后成本说明（ex-post）",
     url: "https://support.traderepublic.com/en-fi/809-What-is-the-ex_post-cost-information",

@@ -23,20 +23,22 @@ export const usEtfVsUcitsVsToken: Article = {
 
 **跟踪同一指数 ≠ 同一只证券。** 基金注册地、ISIN、资产规模、费用率、分红或累积方式、交易场所都可能不同。
 
+对爱尔兰及其他 EEA 零售客户，还有一道产品可买性门槛：PRIIPs 要求销售前提供 KID，而美国 ETF 发行人通常不制作 EU 版本，因此普通零售账户一般不能新买 VOO、VTI、SPY、QQQ。券商公共目录能搜到产品不等于登录后的账户获准买入。
+
 ## 六家平台的产品支持实况
 
 | 平台 | 美股 | 美国本土 ETF（VOO 等） | UCITS ETF |
 |---|---|---|---|
 | IBKR US | 真实股票 | **支持** | 支持欧洲市场产品 |
 | Schwab US | 真实股票 | **支持** | 经 Schwab Global 等渠道，非同一执行路径 |
-| Trading 212 | 真实股票（Invest） | **官方目录明确列示 VOO/VTI/SPY/QQQ** | 支持大量 UCITS ETF |
-| Trade Republic | 真实证券 | 公开目录未确认 | 核心产品范围（2,000+，清单以 app 为准） |
+| Trading 212 EU | 真实股票（Invest） | 公共目录可见；EEA 零售通常因无 KID 不可买 | 支持大量 UCITS ETF |
+| Trade Republic | 真实证券 | EEA 零售通常因无 KID 不可买 | 核心产品范围（2,000+，清单以 app 为准） |
 | Robinhood EU | **仅 Stock Token** | 不持有 ETF，仅可能的 Token | 不提供传统 UCITS 持仓 |
 | Revolut EU | 真实股票（受益所有人） | **不支持** | 欧盟注册非复杂 ETF |
 
 ## 为什么这对费用比较至关重要
 
-把 Robinhood 的 0.10% 与 Trading 212 的 0.15% 直接比较会得出错误结论：前者买的是衍生合约（且买卖各收一次 FX），后者买的是真实 ETF 份额。同样，Revolut 上"免佣买入标普 500 ETF"买到的是一只独立的 UCITS 基金——费用、分红和税务处理都与 VOO 不同。
+把 Robinhood 的 0.10% 与 UCITS ETF 的零佣金直接比较会得出错误结论：前者买的是衍生合约（且买卖各收一次 FX），后者买的是真实基金份额。Revolut、Trading 212 或 Trade Republic 上的“标普 500 ETF”通常是一只独立的 UCITS 基金——费用、分红和税务处理都与 VOO 不同。
 
 同一品牌的不同账户实体也可能展示不同产品清单：Trading 212 欧洲版 FX 为 0.15%，澳大利亚实体为 0.40%；Trade Republic 官方也明确表示，并非其交易合作方列出的所有 ETF 都一定可在其平台交易。下单前应以自己账户 app 内的目录和订单预览为准。
 `,
