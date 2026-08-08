@@ -114,15 +114,15 @@ VOO、VTI 与 VT 的费率来自 Vanguard 的 [VOO](https://investor.vanguard.co
 
 ## 各平台的自动定投、费用与产品覆盖
 
-| 平台与区域 | VOO/QQQ 新买权限 | 自动定投 | 两只 ETF 每月各买一次 | 产品覆盖与主要限制 |
+| 平台与区域 | 指数定投路径 | 自动定投 | 两只 ETF 每月各买一次 | 产品覆盖与主要限制 |
 |---|---|---|---:|---|
 | **IBKR 美国账户 / Pro** | 以账户实际权限为准；EEA Retail 公开规则可能拦截 | 是；仅可碎股产品，日/周/双周/月/季/年 | 若允许美国 ETF，Recurring 约 **$24/年** | 24,047 只美/加/欧可碎股股票或 ETF；Pro 自动定投费以预览/成交单为准 |
-| **Charles Schwab 美国券商账户** | 爱尔兰居民只能持有/卖出现有美国 ETP，不能追加 | 未发现自选 ETF AIP；需手动 | VOO/QQQ **不可执行**；UCITS 电话单约 **$1,200/年** | 2,000+ 美国 ETF；UCITS 每笔 $50 且需 specialist |
-| **Trading 212 爱尔兰** | 美国 ETF 公共页不代表可买；用 UCITS | 是；单品日/周/双周/月，Pie 另有更长周期 | EUR UCITS **€0** | 公共 Invest 目录 13,000+ 股票与 ETF 合计；Pie 外币 slice 每次收 0.15% FX |
-| **Trade Republic 爱尔兰** | 用 UCITS | 是；周/月两次/月/季 | Savings Plan **€0** | 爱尔兰当前准确 ETF 数未公开；产品与计划资格以 app 为准 |
-| **Revolut 爱尔兰** | 只提供合资格欧洲 ETP 路径 | 是；合资格产品可日/周/月 | 合资格计划 **€0** | 2024 年官方曾披露 500+ ETF；准确合资格清单以 app 为准 |
-| **Lightyear 爱尔兰** | 用 UCITS | 是；周/双周/月 | EUR ETF Plan **€0** | 公开筛选器 482 只 ETF/MMF；目录较小 |
-| **DEGIRO 爱尔兰** | 用 UCITS | **否** | Core 手动约 €24；非 Core 约 €72 | Core 1,000+ 产品；不能设自动 ETF 买单 |
+| **Charles Schwab 美国券商账户** | 新增资金只能走 UCITS 对标：SPYL/VUAA/CSPX、ANAU/CNDX/EQQQ | 未发现自选 ETF AIP；需手动 | 两只 UCITS 电话单约 **$1,200/年** | 2,000+ 美国 ETF；UCITS 每笔 $50 且需 specialist |
+| **Trading 212 爱尔兰** | 使用 UCITS 对标：SPYL/VUAA/CSPX、ANAU/CNDX/EQQQ | 是；单品日/周/双周/月，Pie 另有更长周期 | EUR UCITS **€0** | 公共 Invest 目录 13,000+ 股票与 ETF 合计；Pie 外币 slice 每次收 0.15% FX |
+| **Trade Republic 爱尔兰** | 使用平台合资格的 S&P 500 与 Nasdaq-100 UCITS ETF | 是；周/月两次/月/季 | Savings Plan **€0** | 爱尔兰当前准确 ETF 数未公开；产品与计划资格以 app 为准 |
+| **Revolut 爱尔兰** | 使用带 Investment Plan 标记的欧洲 UCITS 对标产品 | 是；合资格产品可日/周/月 | 合资格计划 **€0** | 2024 年官方曾披露 500+ ETF；准确合资格清单以 app 为准 |
+| **Lightyear 爱尔兰** | 使用平台提供的欧洲 UCITS 对标产品 | 是；周/双周/月 | EUR ETF Plan **€0** | 公开筛选器 482 只 ETF/MMF；目录较小 |
+| **DEGIRO 爱尔兰** | 使用爱尔兰账户开放的 S&P 500 与 Nasdaq-100 UCITS ETF | **否** | Core 手动约 €24；非 Core 约 €72 | Core 1,000+ 产品；不能设自动 ETF 买单 |
 
 IBKR 的[定投功能说明](https://www.interactivebrokers.com/campus/trading-lessons/using-ibkrs-recurring-investments-feature/)确认可按固定金额与多种频率执行，且只有可碎股证券合资格；[Fact Sheet](https://www.interactivebrokers.com/en/general/about/ibkr-fact-sheet.php)列出 24,047 只可碎股股票或 ETF。Trading 212 规则见 [Pies & AutoInvest](https://helpcentre.trading212.com/hc/en-us/articles/30661163244317-Pies-AutoInvest-Introduction)与[主货币限制](https://helpcentre.trading212.com/hc/en-us/articles/34159237080861-Can-I-choose-the-currency-in-which-to-buy-sell-assets-for-Invest-accounts)。Trade Republic 规则见[创建 Savings Plan](https://support.traderepublic.com/en-ie/768)与[费用说明](https://support.traderepublic.com/en-ie/760-What-are-savings-plans)。Revolut 规则见[Investment Plans](https://help.revolut.com/en-IE/help/wealth/stocks/getting-started-with-etf-s/etfs-investment-plans/)。
 
@@ -207,21 +207,24 @@ Schwab One 以 USD 运作。其[个人价格指南](https://www.schwab.com/legal
 
 以下算例统一采用 52 周或 12 个月，不考虑市场涨跌、买卖价差、税费与卖出成本。基金内部费用不是另行扣款，而是持续反映在基金净值中。为便于估算，假设每次在期初投入、基金价格全年不变：每周投入 100，一年投入 5,200，第一年平均在场资金约为 **2,650**。
 
-### 例 1：每周买一次 $100 的 VOO 或 QQQ
+### 例 1：每周投入一次——美国平台 $100，欧洲平台 €100
 
-IBKR Recurring Investments 使用 Standard Fixed 佣金；美国 ETF 每单费用取 **$1 与成交额 1% 中较低者**。因此，$100 的订单刚好是 $1，一年 52 笔就是 **$52**。该口径来自 IBKR 的[定投功能答复](https://www.interactivebrokers.com/campus/trading-lessons/using-ibkrs-recurring-investments-feature/)和[美国股票/ETF 佣金表](https://www.interactivebrokers.com/en/pricing/commissions-stocks.php)。
+IBKR 按每周 $100 直接定投 VOO 或 QQQ；爱尔兰区欧洲平台只能选择相同指数的 UCITS 对标产品，因此按每周 €100 计算。这里采用两组低费对标：**SPYL 对标 VOO 的 S&P 500**，**ANAU 对标 QQQ 的 Nasdaq-100**。如果平台没有这两个 share class，则按同一指数选择 VUAA/CSPX 或 CNDX/EQQQ。
 
-| 平台与账户区域 | 每周 $100 VOO | 每周 $100 QQQ | 结论 |
-|---|---:|---:|---|
-| **IBKR 美国账户 / Pro** | 平台费 **$52**；含首年基金费用约 **$52.80** | 平台费 **$52**；含首年基金费用约 **$56.77** | 仅在账户实际允许新增美国 ETF 时可执行 |
-| **Charles Schwab / 爱尔兰居民** | 不可新增购买 | 不可新增购买 | $0 在线佣金不改变产品权限 |
-| **Trading 212 爱尔兰** | 不按 VOO 路径执行 | 不按 QQQ 路径执行 | 使用 S&P 500 / Nasdaq-100 UCITS ETF |
-| **Trade Republic 爱尔兰** | 不提供标准零售购买路径 | 不提供标准零售购买路径 | 使用合资格 UCITS Savings Plan |
-| **Revolut 爱尔兰** | 不提供标准零售购买路径 | 不提供标准零售购买路径 | 使用带 Investment Plan 标记的欧洲 ETP |
-| **Lightyear 爱尔兰** | 不提供美国上市 ETF | 不提供美国上市 ETF | 使用欧洲 UCITS ETF |
-| **DEGIRO 爱尔兰** | 通常受 KID 与产品开放限制 | 通常受 KID 与产品开放限制 | 使用爱尔兰账户可买的 UCITS ETF |
+| 平台与账户区域 | S&P 500 每周投入 | Nasdaq-100 每周投入 | 年平台买入费 | 含首年基金费用的估算 |
+|---|---|---|---:|---:|
+| **IBKR 美国账户 / Pro** | $100 VOO | $100 QQQ | 每只 **$52** | VOO 约 **$52.80**；QQQ 约 **$56.77** |
+| **Charles Schwab / 爱尔兰居民** | €100 SPYL/VUAA/CSPX，电话下单 | €100 ANAU/CNDX/EQQQ，电话下单 | 每只 **US$2,600** | US$2,600 加对应基金费用 |
+| **Trading 212 爱尔兰** | €100 SPYL 或其他合资格对标 | €100 ANAU 或其他合资格对标 | **€0** | SPYL 约 **€0.80**；ANAU 约 **€3.71** |
+| **Trade Republic 爱尔兰** | €100 合资格 S&P 500 UCITS ETF | €100 合资格 Nasdaq-100 UCITS ETF | **€0** | SPYL 费率口径约 **€0.80**；ANAU 费率口径约 **€3.71** |
+| **Revolut 爱尔兰** | €100 带计划标记的 S&P 500 UCITS ETF | €100 带计划标记的 Nasdaq-100 UCITS ETF | 合资格计划 **€0** | SPYL 费率口径约 **€0.80**；ANAU 费率口径约 **€3.71** |
+| **Lightyear 爱尔兰** | €100 合资格碎股 S&P 500 UCITS ETF | €100 合资格碎股 Nasdaq-100 UCITS ETF | **€0** | SPYL 费率口径约 **€0.80**；ANAU 费率口径约 **€3.71** |
+| **DEGIRO Core Selection** | €100 Core S&P 500 UCITS ETF | €100 Core Nasdaq-100 UCITS ETF | 每只 **€52** | SPYL 费率口径约 **€52.80**；ANAU 费率口径约 **€55.71** |
+| **DEGIRO 非 Core ETF** | €100 S&P 500 UCITS ETF | €100 Nasdaq-100 UCITS ETF | 每只 **€156** | SPYL 费率口径约 **€156.80**；ANAU 费率口径约 **€159.71** |
 
-VOO 的 0.03% 费率作用于约 $2,650 的首年平均资金，约为 **$0.80**；QQQ 的 0.18% 对应约 **$4.77**。这解释了表中的 $52.80 与 $56.77。实际金额会随成交日期、基金价格和持仓变化。
+IBKR Recurring Investments 使用 Standard Fixed 佣金；美国 ETF 每单费用取 **$1 与成交额 1% 中较低者**。因此，$100 的订单刚好是 $1，一年 52 笔就是 **$52**。VOO 的 0.03% 费率作用于约 $2,650 的首年平均资金，约为 **$0.80**；QQQ 的 0.18% 对应约 **$4.77**。该佣金口径来自 IBKR 的[定投功能答复](https://www.interactivebrokers.com/campus/trading-lessons/using-ibkrs-recurring-investments-feature/)和[美国股票/ETF 佣金表](https://www.interactivebrokers.com/en/pricing/commissions-stocks.php)。
+
+欧洲对标中，SPYL 的 0.03% 对应首年基金费用约 **€0.80**，ANAU 的 0.14% 对应约 **€3.71**。若改用 VUAA/CSPX（0.07%），首年基金费用约 **€1.86**；若改用 CNDX/EQQQ（0.30%），约为 **€7.95**。实际金额会随成交日期、基金价格和持仓变化。
 
 ### 例 2：每周同时买 $100 VOO 和 $100 QQQ
 
@@ -233,19 +236,19 @@ VOO 的 0.03% 费率作用于约 $2,650 的首年平均资金，约为 **$0.80**
 
 若把 QQQ 换成费率 0.15% 的 QQQM，首年 QQQM 内部费用约 $3.98，合计约 **$108.77**。第一年的差额不大，但随着累计持仓增加，较低费率的影响会逐年放大。
 
-### 例 3：每周投入 €100，改买 EUR 上市的 UCITS ETF
+### 例 3：每月投入 €100，买 EUR 上市的 UCITS ETF
 
-假设所选 ETF 在平台可买且符合定投资格，以 **SPYL（S&P 500，0.03%）**和 **ANAU（Nasdaq-100，0.14%）**作为费用示例。两者都按 EUR 上市代码买入，因此不计订单层面的换汇费。
+这一组把频率改成每月一次：全年投入 €1,200，第一年平均在场资金约 €650。仍以 **SPYL（S&P 500，0.03%）**和 **ANAU（Nasdaq-100，0.14%）**作为费用示例。两者都按 EUR 上市代码买入，因此不计订单层面的换汇费。
 
-| 爱尔兰可用平台 | 每周买入的年度平台费 | SPYL 首年总成本估算 | ANAU 首年总成本估算 | 自动执行 |
+| 爱尔兰可用平台 | 每月买入的年度平台费 | SPYL 首年总成本估算 | ANAU 首年总成本估算 | 自动执行 |
 |---|---:|---:|---:|---|
-| **Trading 212** | **€0** | 约 **€0.80** | 约 **€3.71** | 是；Pie / AutoInvest |
-| **Trade Republic** | **€0** | 约 **€0.80** | 约 **€3.71** | 是；合资格 Savings Plan |
-| **Revolut** | 合资格 Investment Plan 为 **€0** | 约 **€0.80** | 约 **€3.71** | 以产品的计划标记为准 |
-| **Lightyear** | **€0** | 约 **€0.80** | 约 **€3.71** | 是；合资格碎股 ETF |
-| **DEGIRO Core Selection** | **€52** | 约 **€52.80** | 约 **€55.71** | 否；需手动下 52 笔订单 |
-| **DEGIRO 非 Core ETF** | **€156** | 约 **€156.80** | 约 **€159.71** | 否；未计可能的连接费 |
-| **Schwab 的 UCITS 路径** | **US$2,600** | US$2,600 加基金费用 | US$2,600 加基金费用 | 否；52 次电话单 |
+| **Trading 212** | **€0** | 约 **€0.20** | 约 **€0.91** | 是；Pie / AutoInvest |
+| **Trade Republic** | **€0** | 约 **€0.20** | 约 **€0.91** | 是；合资格 Savings Plan |
+| **Revolut** | 合资格 Investment Plan 为 **€0** | 约 **€0.20** | 约 **€0.91** | 以产品的计划标记为准 |
+| **Lightyear** | **€0** | 约 **€0.20** | 约 **€0.91** | 是；合资格碎股 ETF |
+| **DEGIRO Core Selection** | **€12** | 约 **€12.20** | 约 **€12.91** | 否；需手动下 12 笔订单 |
+| **DEGIRO 非 Core ETF** | **€36** | 约 **€36.20** | 约 **€36.91** | 否；未计可能的连接费 |
+| **Schwab 的 UCITS 路径** | **US$600** | US$600 加基金费用 | US$600 加基金费用 | 否；12 次电话单 |
 
 Trading 212 的[费用页](https://helpcentre.trading212.com/hc/en-us/articles/11471996799517-What-are-the-fees-in-the-Invest-ISAs-and-SIPP)与 [AutoInvest 页面](https://helpcentre.trading212.com/hc/en-us/articles/30661163244317-Pies-AutoInvest-Introduction)确认交易佣金为零并支持每周计划；Trade Republic 的[爱尔兰 Savings Plan 页面](https://support.traderepublic.com/en-ie/760-What-are-savings-plans)确认执行费为零。Revolut 只对[合资格 Investment Plan 产品](https://help.revolut.com/en-IE/help/wealth/stocks/getting-started-with-etf-s/etfs-investment-plans/)免佣。Lightyear 的[价格表](https://lightyear.com/en-eu/pricing)列明 ETF 无执行费，其[计划页](https://lightyear.com/en-ie/plans)支持每周、双周和每月自动投入。DEGIRO 的[爱尔兰价格表](https://www.degiro.ie/fees)列明 Core ETF 每笔 €1、其他 ETF 每笔 €3，并明确[不提供自动投资](https://www.degiro.ie/helpdesk/money-transfers-and-handling/can-i-set-automatic-investing-or-automatic-monthly-deposits)。
 
