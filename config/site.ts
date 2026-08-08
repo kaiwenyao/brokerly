@@ -6,7 +6,7 @@ export const siteConfig = {
   ogImage: "/images/og.png",
   links: {
     twitter: "",
-    github: "",
+    github: "https://github.com/kaiwenyao/brokerly",
   },
 } as const;
 
