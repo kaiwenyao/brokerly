@@ -27,7 +27,7 @@ export const irelandEtfDcaPlatformComparison2026: Article = {
     role: "Research",
   },
   publishedAt: "2026-08-09",
-  readingMinutes: 16,
+  readingMinutes: 23,
   cover: "/images/research/ireland-etf-dca-platform-comparison-2026.jpg",
   body: `
 ## 账户区域与费用口径
@@ -202,5 +202,112 @@ Schwab One 以 USD 运作。其[个人价格指南](https://www.schwab.com/legal
 ## 资料口径
 
 研究覆盖账户实体与监管分类、美国券商的产品权限、IBKR Pro 自动/手动费用、三家爱尔兰平台的定投费率，以及美国 ETF 与 UCITS ETF 内部费用。事实依据限于监管机构、券商与基金发行人的官方资料；无法从公开网页确认的账户级权限统一标为“以实际订单预览/app 为准”。
+
+## 定投成本算例
+
+以下算例统一采用 52 周或 12 个月，不考虑市场涨跌、买卖价差、税费与卖出成本。基金内部费用不是另行扣款，而是持续反映在基金净值中。为便于估算，假设每次在期初投入、基金价格全年不变：每周投入 100，一年投入 5,200，第一年平均在场资金约为 **2,650**。
+
+### 例 1：每周买一次 $100 的 VOO 或 QQQ
+
+IBKR Recurring Investments 使用 Standard Fixed 佣金；美国 ETF 每单费用取 **$1 与成交额 1% 中较低者**。因此，$100 的订单刚好是 $1，一年 52 笔就是 **$52**。该口径来自 IBKR 的[定投功能答复](https://www.interactivebrokers.com/campus/trading-lessons/using-ibkrs-recurring-investments-feature/)和[美国股票/ETF 佣金表](https://www.interactivebrokers.com/en/pricing/commissions-stocks.php)。
+
+| 平台与账户区域 | 每周 $100 VOO | 每周 $100 QQQ | 结论 |
+|---|---:|---:|---|
+| **IBKR 美国账户 / Pro** | 平台费 **$52**；含首年基金费用约 **$52.80** | 平台费 **$52**；含首年基金费用约 **$56.77** | 仅在账户实际允许新增美国 ETF 时可执行 |
+| **Charles Schwab / 爱尔兰居民** | 不可新增购买 | 不可新增购买 | $0 在线佣金不改变产品权限 |
+| **Trading 212 爱尔兰** | 不按 VOO 路径执行 | 不按 QQQ 路径执行 | 使用 S&P 500 / Nasdaq-100 UCITS ETF |
+| **Trade Republic 爱尔兰** | 不提供标准零售购买路径 | 不提供标准零售购买路径 | 使用合资格 UCITS Savings Plan |
+| **Revolut 爱尔兰** | 不提供标准零售购买路径 | 不提供标准零售购买路径 | 使用带 Investment Plan 标记的欧洲 ETP |
+| **Lightyear 爱尔兰** | 不提供美国上市 ETF | 不提供美国上市 ETF | 使用欧洲 UCITS ETF |
+| **DEGIRO 爱尔兰** | 通常受 KID 与产品开放限制 | 通常受 KID 与产品开放限制 | 使用爱尔兰账户可买的 UCITS ETF |
+
+VOO 的 0.03% 费率作用于约 $2,650 的首年平均资金，约为 **$0.80**；QQQ 的 0.18% 对应约 **$4.77**。这解释了表中的 $52.80 与 $56.77。实际金额会随成交日期、基金价格和持仓变化。
+
+### 例 2：每周同时买 $100 VOO 和 $100 QQQ
+
+- 年投入：$100 × 52 × 2 = **$10,400**
+- IBKR Recurring 买入次数：104 笔
+- 平台佣金：104 × $1 = **$104**
+- 首年基金内部费用：VOO 约 $0.80，QQQ 约 $4.77
+- 首年平台佣金加基金内部费用：约 **$109.57**
+
+若把 QQQ 换成费率 0.15% 的 QQQM，首年 QQQM 内部费用约 $3.98，合计约 **$108.77**。第一年的差额不大，但随着累计持仓增加，较低费率的影响会逐年放大。
+
+### 例 3：每周投入 €100，改买 EUR 上市的 UCITS ETF
+
+假设所选 ETF 在平台可买且符合定投资格，以 **SPYL（S&P 500，0.03%）**和 **ANAU（Nasdaq-100，0.14%）**作为费用示例。两者都按 EUR 上市代码买入，因此不计订单层面的换汇费。
+
+| 爱尔兰可用平台 | 每周买入的年度平台费 | SPYL 首年总成本估算 | ANAU 首年总成本估算 | 自动执行 |
+|---|---:|---:|---:|---|
+| **Trading 212** | **€0** | 约 **€0.80** | 约 **€3.71** | 是；Pie / AutoInvest |
+| **Trade Republic** | **€0** | 约 **€0.80** | 约 **€3.71** | 是；合资格 Savings Plan |
+| **Revolut** | 合资格 Investment Plan 为 **€0** | 约 **€0.80** | 约 **€3.71** | 以产品的计划标记为准 |
+| **Lightyear** | **€0** | 约 **€0.80** | 约 **€3.71** | 是；合资格碎股 ETF |
+| **DEGIRO Core Selection** | **€52** | 约 **€52.80** | 约 **€55.71** | 否；需手动下 52 笔订单 |
+| **DEGIRO 非 Core ETF** | **€156** | 约 **€156.80** | 约 **€159.71** | 否；未计可能的连接费 |
+| **Schwab 的 UCITS 路径** | **US$2,600** | US$2,600 加基金费用 | US$2,600 加基金费用 | 否；52 次电话单 |
+
+Trading 212 的[费用页](https://helpcentre.trading212.com/hc/en-us/articles/11471996799517-What-are-the-fees-in-the-Invest-ISAs-and-SIPP)与 [AutoInvest 页面](https://helpcentre.trading212.com/hc/en-us/articles/30661163244317-Pies-AutoInvest-Introduction)确认交易佣金为零并支持每周计划；Trade Republic 的[爱尔兰 Savings Plan 页面](https://support.traderepublic.com/en-ie/760-What-are-savings-plans)确认执行费为零。Revolut 只对[合资格 Investment Plan 产品](https://help.revolut.com/en-IE/help/wealth/stocks/getting-started-with-etf-s/etfs-investment-plans/)免佣。Lightyear 的[价格表](https://lightyear.com/en-eu/pricing)列明 ETF 无执行费，其[计划页](https://lightyear.com/en-ie/plans)支持每周、双周和每月自动投入。DEGIRO 的[爱尔兰价格表](https://www.degiro.ie/fees)列明 Core ETF 每笔 €1、其他 ETF 每笔 €3，并明确[不提供自动投资](https://www.degiro.ie/helpdesk/money-transfers-and-handling/can-i-set-automatic-investing-or-automatic-monthly-deposits)。
+
+### 例 4：同样一年投入 $5,200，改变 IBKR 买入频率
+
+| 频率 | 每次投入 | 年订单数 | 年平台佣金 | 占年投入比例 |
+|---|---:|---:|---:|---:|
+| 每周 | $100 | 52 | **$52** | **1.00%** |
+| 每两周 | $200 | 26 | **$26** | **0.50%** |
+| 每月 | $433.33 | 12 | **$12** | **0.23%** |
+| 每季度 | $1,300 | 4 | **$4** | **0.08%** |
+
+投入总额相同，IBKR Pro 的 Fixed 最低费会让高频小单更贵。每周买入可以把入场时间分散得更细；每月买入则把显性佣金从 $52 降到 $12。选择频率时需要在现金到位时间、执行便利性和佣金之间取舍。
+
+### 例 5：IBKR 每周小额定投的费用拖累
+
+| 每周投入一只美国 ETF | 年投入 | 年佣金 | 佣金占投入比例 |
+|---|---:|---:|---:|
+| $25 | $1,300 | **$13** | **1.00%** |
+| $50 | $2,600 | **$26** | **1.00%** |
+| $100 | $5,200 | **$52** | **1.00%** |
+| $250 | $13,000 | **$52** | **0.40%** |
+| $1,000 | $52,000 | **$52** | **0.10%** |
+
+$100 以下的订单因“$1 与成交额 1% 取低”而基本承受 1% 佣金；超过 $100 后，每单 $1 的固定费用开始被更大的投入摊薄。对小额账户，合并成月投通常比坚持周投更省钱。
+
+### 例 6：每月 $500，按 70%/30% 买两只 ETF
+
+每月买 $350 VOO 与 $150 QQQM，一年共 24 笔订单：
+
+| 组合 | 年投入 | IBKR 年佣金 | 首年平均资金 | 加权基金费率 | 首年佣金加基金费用 |
+|---|---:|---:|---:|---:|---:|
+| 70% VOO + 30% QQQM | $6,000 | **$24** | 约 $3,250 | **0.066%** | 约 **$26.15** |
+| 70% VOO + 30% QQQ | $6,000 | **$24** | 约 $3,250 | **0.075%** | 约 **$26.44** |
+
+基金费率差异在第一年只有约 $0.29，因为资金是逐月进入；随着多年持仓余额增加，QQQM 相比 QQQ 的累计费用优势会更明显。
+
+### 例 7：换汇频率如何改变成本
+
+以下只计算明确的换汇手续费，并假设全年需要把等值 €5,200 换成目标交易币种：
+
+| 场景 | 年换汇成本估算 | 与本币 ETF 的差异 |
+|---|---:|---|
+| **IBKR：年初手动换一次 EUR→USD** | 受最低费影响，约 **$2** | 再加每周美国 ETF 买入佣金 $52，合计约 $54 |
+| **IBKR：每周手动换一次 EUR→USD** | 52 × $2 = **$104** | 再加买入佣金 $52，合计约 $156 |
+| **Trading 212 Pie：EUR 买外币 UCITS，FX 0.15%** | 约 **€7.80** | 买 EUR 上市代码则订单 FX 为 €0 |
+| **Lightyear：EUR 买外币 UCITS，FX 0.35%** | 约 **€18.20** | 买 EUR 上市代码则订单 FX 为 €0 |
+| **DEGIRO Auto FX：EUR 买外币 ETF，FX 0.25%** | 约 **€13.00** | 另加 ETF 交易费；EUR 产品无需该项换汇 |
+
+IBKR 的现货 FX 最低约 $2/单，因此频繁小额换汇会被最低费主导。Trading 212 的 Pie 会对外币 slice 自动换汇并收取标准 FX 费；Lightyear 与 DEGIRO 的比例费用则直接随换汇总额增长。Revolut 的换汇成本受套餐、月度额度和交易时间影响，不能在不指定套餐的情况下给出单一年度数字。
+
+### 例 8：Schwab 通过电话买 UCITS ETF
+
+Schwab 对合资格非美国居民购买 UCITS ETF 每笔收 $50，且必须由 Global Investing specialist 协助下单。只看买入交易费：
+
+| 计划 | 年订单数 | 年交易费 |
+|---|---:|---:|
+| 每月买一只 UCITS ETF | 12 | **$600** |
+| 每月各买一只 S&P 500 与 Nasdaq-100 UCITS ETF | 24 | **$1,200** |
+| 每周买一只 UCITS ETF | 52 | **$2,600** |
+| 每周各买两只 UCITS ETF | 104 | **$5,200** |
+
+这些费用还没有加入基金费率、价差与换汇。Schwab 的[国际 ETF 说明](https://international.schwab.com/investment-products/etf-trading/how-do-etfs-work)同时确认：EEA 居民不能新增美国注册 ETF，而 UCITS ETF 电话单每笔收费 $50。
 `,
 };
