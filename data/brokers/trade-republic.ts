@@ -34,7 +34,7 @@ export const tradeRepublic: Broker = {
   features: [
     { key: "us-stocks", label: "真实美股", supported: true, note: "真实证券；碎股由特定执行机制处理" },
     { key: "us-etf", label: "美国本土 ETF", supported: false, note: "EEA 零售客户通常因缺少 PRIIPs KID 不能买 VOO、QQQ 等" },
-    { key: "ucits", label: "UCITS ETF", supported: true, note: "核心产品范围，超过 2,000 只，准确清单以 app 为准" },
+    { key: "ucits", label: "UCITS ETF", supported: true, note: "覆盖广；爱尔兰当前准确数量与 Savings Plan 清单以 app 为准" },
     { key: "fractional", label: "碎股", supported: true, note: "部分股票和 ETF 最低 €1" },
     { key: "usd-balance", label: "可持有 USD 余额", supported: false },
     { key: "margin", label: "保证金融资", supported: false, note: "按现金证券账户处理" },
@@ -43,7 +43,7 @@ export const tradeRepublic: Broker = {
     "合资格 Savings Plan 买入执行费为 €0，适合小额定投",
     "可设每周、每月两次、每月或每季自动执行",
     "无一般证券账户月费",
-    "UCITS ETF 选择丰富，官方披露超过 2,000 只",
+    "UCITS ETF 选择丰富，爱尔兰产品与 Savings Plan 资格可在 app 内逐只确认",
   ],
   cons: [
     "普通手动交易和卖出通常仍收 €1——大量 €10–€50 手动小单成本高",

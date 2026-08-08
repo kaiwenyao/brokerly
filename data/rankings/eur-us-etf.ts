@@ -8,7 +8,7 @@ export const eurUsEtfRanking: Ranking = {
   lastUpdated: "2026-08-08",
   entries: [
     { rank: 1, brokerSlug: "trading212", reason: "EUR 计价 UCITS ETF 可零佣金、零 FX 自动投入；Pie 还能按目标权重定投多只 ETF" },
-    { rank: 2, brokerSlug: "trade-republic", reason: "2,000+ ETF，合资格 Savings Plan 买入执行费 €0；普通手动交易和卖出通常 €1" },
+    { rank: 2, brokerSlug: "trade-republic", reason: "合资格 Savings Plan 买入执行费 €0；爱尔兰准确产品数量和计划资格以 app 为准，普通手动交易和卖出通常 €1" },
     { rank: 3, brokerSlug: "revolut", reason: "合资格 ETP Investment Plan 买入免佣，但准确计划清单只能在 app 内确认" },
     { rank: 4, brokerSlug: "ibkr", reason: "市场覆盖和转户能力强，但欧洲 ETF 定投按标准佣金收费，小额月投受最低费影响" },
     { rank: 5, brokerSlug: "schwab", reason: "美国账户适合已有美元的合资格客户，不是爱尔兰零售客户定投 UCITS ETF 的本地化路径" },

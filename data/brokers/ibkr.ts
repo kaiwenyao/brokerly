@@ -3,7 +3,7 @@ import type { Broker } from "@/types";
 /**
  * Interactive Brokers 美国版账户 —— 本站统一采用 **IBKR Pro** 口径。
  * Pro 提供 Fixed 与 Tiered 两种定价，不依赖订单流付款。
- * 费率核对：2026-08-05
+ * 费率核对：2026-08-09
  */
 export const ibkr: Broker = {
   slug: "ibkr",
@@ -11,7 +11,7 @@ export const ibkr: Broker = {
   website: "https://www.interactivebrokers.com",
   regions: ["US"],
   summary:
-    "美国版 Pro 方案。Tiered 每笔最低 $0.35 并透传交易所费用与返佣，Fixed 每笔最低 $1 但费用全包；自动换汇加点约 0.03%，为六家最低。",
+    "美国上市证券的 IBKR Pro 费率。Tiered 每笔最低 $0.35，Fixed 每笔最低 $1；Recurring Investments 按官方较明确的 Fixed 口径估算。Pro 是收费方案，不等于 MiFID Professional Client；爱尔兰零售客户的美国 ETF 权限仍可能受 KID 限制。",
   feeSummary: {
     usStock: "$0.35 起（Tiered）",
     usEtf: "$0.35 起（Tiered）",
@@ -38,6 +38,7 @@ export const ibkr: Broker = {
     extra: [
       { label: "Pro Tiered 佣金", value: "$0.0005–0.0035/股", note: "每笔最低 $0.35，按月成交量分层递减，另行透传外部费用与返佣" },
       { label: "Pro Fixed 佣金", value: "$0.005/股", note: "每笔最低 $1、最高为成交额的 1%，已包含监管与交易所费用" },
+      { label: "Recurring Investments", value: "Fixed 口径约 $1/单", note: "每单取 $1 与成交额 1% 较低者；最终以计划预览和成交单为准" },
       { label: "自动换汇", value: "汇率 ±0.03%", note: "无另收佣金，主要用于覆盖交易所需货币" },
       { label: "手动现货 FX", value: "0.20 个基点起", note: "最低 $2/单；大额换汇的边际费率优于自动换汇" },
       { label: "SEC Section 31（卖出）", value: "$0.0000206 × 卖出金额", note: "每百万美元 $20.60；Fixed 已含，Tiered 转嫁" },
@@ -50,7 +51,7 @@ export const ibkr: Broker = {
   },
   features: [
     { key: "us-stocks", label: "真实美股", supported: true },
-    { key: "us-etf", label: "美国本土 ETF（VOO/VTI/SPY/QQQ）", supported: true },
+    { key: "us-etf", label: "美国本土 ETF（VOO/VTI/SPY/QQQ）", supported: true, note: "仅限实际有权限的客户；EEA 零售客户可能因无 PRIIPs KID 被拦截" },
     { key: "ucits", label: "UCITS ETF", supported: true, note: "支持欧洲市场产品" },
     { key: "fractional", label: "碎股", supported: true, note: "多数合资格股票和 ETF" },
     { key: "usd-balance", label: "可持有 USD 余额", supported: true },
@@ -60,7 +61,7 @@ export const ibkr: Broker = {
     "自动换汇加点约 0.03%，六家中最低",
     "Tiered 透传交易所费用与返佣，被动挂单可降低净成本",
     "不依赖订单流付款，提供完整的 SmartRouting 与直连场所能力",
-    "VOO、VTI、SPY、QQQ 等美国本土 ETF 全支持",
+    "账户有实际权限时，VOO、VTI、SPY、QQQ 可交易，VOO/QQQ 也在可碎股清单中",
     "无最低余额、无维护费、无 inactivity fee；融资利率起步为基准加 1.5%",
   ],
   cons: [
@@ -68,6 +69,7 @@ export const ibkr: Broker = {
     "Tiered 的外部费用逐笔变动，下单前难以精确预估总成本",
     "完整 NBBO / 整合行情需付费订阅",
     "平台功能复杂，学习成本高于移动端券商",
+    "IBKR Pro 只是收费方案；爱尔兰居民不能据此推断已获得 PRIIPs 专业客户豁免",
   ],
-  lastUpdated: "2026-08-05",
+  lastUpdated: "2026-08-09",
 };
