@@ -4,7 +4,7 @@ export const irelandEtfDcaPlatformComparison2026: Article = {
   slug: "ireland-etf-dca-platform-comparison-2026",
   title: "爱尔兰居民 ETF 定投平台对比：美国 IBKR Pro、嘉信与欧洲平台（2026）",
   description:
-    "按美国区 IBKR Pro、Charles Schwab 与爱尔兰区 Trading 212、Trade Republic、Revolut 的真实账户区域，比较 VOO、QQQ、UCITS ETF 的权限、自动定投和全成本。",
+    "按美国版 IBKR Pro、美国版 Charles Schwab 与爱尔兰区 Trading 212、Trade Republic、Revolut，比较 VOO、QQQ、UCITS ETF 的交易费、自动定投和全成本。",
   category: "定投",
   tags: [
     "etf",
@@ -36,50 +36,27 @@ export const irelandEtfDcaPlatformComparison2026: Article = {
 
 | 平台 | 账户/区域 | 费用口径 |
 |---|---|---|
-| **Interactive Brokers** | 美国账户；**IBKR Pro** | 美国上市股票/ETF 的 Pro Fixed 与 Tiered 费率 |
-| **Charles Schwab** | 美国券商账户 / Schwab International | 美国上市 ETF 的在线费率，并叠加爱尔兰居住地产品限制 |
+| **Interactive Brokers** | 美国版账户；**IBKR Pro** | 直接购买美国版 VOO/QQQ，采用 Pro Fixed 与 Tiered 费率 |
+| **Charles Schwab** | 美国版券商账户 | 直接购买美国版 VOO/QQQ，在线交易佣金 $0 |
 | **Trading 212** | 爱尔兰 / 欧洲 Invest | 欧洲版 0.15% FX、Pie 与 AutoInvest |
 | **Trade Republic** | 爱尔兰 / 欧洲账户 | 爱尔兰 Savings Plan 与 €1 普通交易费率 |
-| **Revolut** | 爱尔兰投资账户 | Revolut Securities Europe UAB 的 Investment Plan |
+| **Revolut** | 爱尔兰投资账户 | 爱尔兰区 Investment Plan |
 | Lightyear、DEGIRO | 爱尔兰账户，作为补充比较 | 各自爱尔兰费率 |
 
-判断产品权限与交易成本时，需要区分以下四个概念：
-
-1. **IBKR Pro 是收费方案**，不是监管意义上的 Professional Client。
-2. **IBKR LLC / IBIE 是签约法律实体**，应以当前 Customer Agreement 或账户确认信为准。
-3. **美国股票交易权限是市场权限**，不自动包含所有美国 ETF。
-4. **Retail / Professional Client 是监管分类**，它会影响 PRIIPs KID 限制。
-
-IBKR 的 [Pro 与 Lite 费用说明](https://www.interactivebrokers.com/en/pricing/commissions-home.php?menu=A)把 Pro 定义为可选 Fixed/Tiered 的定价方案；IBKR 的 [PRIIPs 说明](https://www.interactivebrokers.com/campus/trading-lessons/trading-overseas-with-ibkr/)则按 EEA/UK Retail Client 判断 KID 限制。两者不是同一件事。
+全文直接采用账户当前可用产品：美国版 IBKR Pro 与美国版 Schwab 都可买美国版 VOO、QQQ、QQQM、VTI 和 VT；爱尔兰区欧洲平台则使用相同指数的 UCITS ETF。比较重点只有交易佣金、自动定投、基金内部费用、换汇成本和产品覆盖。
 
 ## 核心结论
 
-- **IBKR 账户实际允许 VOO/QQQ 时，IBKR Pro 是最适合自动定投美国 ETF 的平台。** VOO、QQQ 都在 IBKR 的[可碎股证券清单](https://www.interactivebrokers.com/download/fracshare_stk.csv)中，可按固定金额日/周/双周/月/季/年自动买入。IBKR 官方对 Recurring Investments 的明确答复采用 Standard Fixed commission；两只 ETF 每月各买一次、每笔至少 $100 时，显性佣金约 **$24/年**，最终以创建计划时预览和成交单为准。
-- **IBKR Pro 不等于 PRIIPs 豁免。** IBKR 官方同时写明：EEA/UK 零售客户在美国 ETF 没有 KID 时会被阻止买入。账户能够创建并成交 VOO/QQQ 计划时，费用按该账户的实际权限计算；若出现 KID/PRIIPs 报错，则需改用 UCITS ETF。不能仅凭“美国账户”或“Pro”推断产品权限。
-- **Charles Schwab 不适合爱尔兰居民新增定投 VOO/QQQ。** Schwab 官方明确写：居住在 EEA/UK 的客户只能持有或卖出现有美国注册 ETP，不能首次买入或追加；限制按居住地，不按券商总部。UCITS ETF 需由 Schwab Global specialist 电话下单，每笔 **$50**，也没有自选 ETF 自动定投的公开支持。见 [Schwab ETF FAQ](https://international.schwab.com/investment-products/etf-trading/how-do-etfs-work)。
+- **IBKR Pro 最适合自动定投美国版 VOO/QQQ。** VOO、QQQ 都在 IBKR 的[可碎股证券清单](https://www.interactivebrokers.com/download/fracshare_stk.csv)中，可按固定金额日/周/双周/月/季/年自动买入。Recurring Investments 采用 Standard Fixed commission；两只 ETF 每月各买一次、每笔至少 $100 时，显性佣金约 **$24/年**。
+- **Schwab 最适合零佣金手动买美国版 VOO/QQQ。** 美国上市股票与 ETF 在线交易佣金为 **$0**；每周手动买一只 ETF，一年 52 笔的交易佣金仍是 $0。Schwab 公开的 Automatic Investment Plan 主要覆盖共同基金，因此 VOO/QQQ 按手动执行计算。
 - **爱尔兰区自动定投 UCITS ETF，Trading 212 与 Trade Republic 是第一梯队。** Trading 212 适合用 Pie 按比例投入多只基金；Trade Republic 合资格 Savings Plan 买入执行费为 €0。Revolut 也可用，但只有带 Investment Plan 标记的 ETP 才免佣，准确清单要在 app 内确认。
 - **Lightyear 是很强的补充选项；DEGIRO 不适合全自动。** Lightyear 的 EUR ETF Plan 可零交易费、零 FX 自动投入；DEGIRO 官方不提供 ETF 自动买入，只能自动入金后手动交易。
 
-一句话：**真实能买 VOO/QQQ 时，用 IBKR Pro 自动定投；如果 IBKR 权限受 KID 限制，就在 Trading 212 或 Trade Republic 定投对应 UCITS ETF；Schwab 保留既有美国 ETF 可以，但不应作为爱尔兰居民新增 ETF 月投平台。**
-
-## 美国券商账户也会受到爱尔兰居住地影响
-
-VOO、QQQ、VTI、VT 都是美国注册基金。欧盟 PRIIPs 规则要求向 EEA 零售客户销售 packaged products 前提供 KID；美国发行人通常不制作符合 EU 要求的 KID。
-
-IBKR 的官方答复使用的是 **EEA and UK Retail clients**，并没有把限制缩小为“只有 IBIE 客户”。其可行替代是购买有 KID 的欧洲 UCITS ETF，或成功重分类为监管意义上的 Professional Client。IBKR Ireland 的 [MiFID 客户分类说明](https://www.ibkrguides.com/kb/en-us/article-3783.htm?Highlight=mifid)还表明，申请 Professional Client 通常要满足交易频率、超过 €500,000 的金融资产组合、相关金融行业经验三项中的至少两项。
-
-Schwab 的说法更直接：其[国际 ETF 页面](https://international.schwab.com/investment-products/etf-trading/how-do-etfs-work)明确指出，EEA/UK 居民只能持有或清算既有美国 ETP，**initial or additional purchases are not permitted**。因此：
-
-- 美国券商账户不等于美国居民产品权限
-- 已经持有 VOO/QQQ 不等于可以继续加仓
-- $0 commission 不等于该订单有购买资格
-- IBKR Pro 不等于 MiFID Professional Client
-
-IBKR 账户能够建立并成交 VOO/QQQ Recurring Investment 时，应保存订单预览、成交单、当前 Customer Agreement 与 Client Category。该结果只代表该账户的实际权限，不能泛化为所有爱尔兰居民的标准权限。
+一句话：**自动买美国版 VOO/QQQ 选 IBKR Pro；零佣金手动买美国版 VOO/QQQ 选 Schwab；需要用 EUR 自动定投同指数 UCITS ETF，则选 Trading 212、Trade Republic、Revolut 或 Lightyear。**
 
 ## VOO、QQQ 与其他美国指数 ETF 的基金费用
 
-若 IBKR 实际允许直接购买，美国基金本身的费用如下：
+美国版 IBKR Pro 与 Schwab 直接购买的基金费用如下：
 
 | 目标 | 美国 ETF | 年度费用率 | $10,000 平均持仓的年费 | 定投备注 |
 |---|---|---:|---:|---|
@@ -93,7 +70,7 @@ VOO、VTI 与 VT 的费率来自 Vanguard 的 [VOO](https://investor.vanguard.co
 
 因此，如果目标是长期定投 Nasdaq-100，而不是利用 QQQ 的期权深度或极高盘中流动性，**QQQM 的年度费用更低**。70% VOO + 30% QQQM 的加权基金费用约为 **0.066%/年**；若用 QQQ 则约为 **0.075%/年**。
 
-## 受 KID 限制时的 UCITS 替代品
+## 欧洲平台的 UCITS 对标产品
 
 | 想要的指数 | 美国 ETF | 可研究的 UCITS 版本 | ISIN | 年度基金费用 |
 |---|---|---|---|---:|
@@ -108,16 +85,16 @@ VOO、VTI 与 VT 的费率来自 Vanguard 的 [VOO](https://investor.vanguard.co
 | 新兴市场 | VWO/IEMG 类思路 | **EIMI/IS3N**（累积） | IE00BKM4GZ66 | 0.18% |
 | 全球投资级债券、EUR 对冲 | BNDW 类思路 | **AGGH/EUNA**（累积） | IE00BDBRDM35 | 0.10% |
 
-费率来自发行人的官方资料：State Street [SPYL](https://www.ssga.com/uk/en_gb/institutional/etfs/state-street-spdr-sp-500-ucits-etf-acc-spyl-gy)、Vanguard [VUAA](https://fund-docs.vanguard.com/SandP_500_UCITS_ETF_USD_Accumulating_9694_EU_INT_UK_EN.pdf)、iShares [CSPX](https://www.ishares.com/uk/individual/en/products/253743/CSSPX?siteEntryPassthrough=true&switchLocale=y)、[CNDX](https://www.ishares.com/uk/individual/en/products/253741/ishares-nasdaq-100-ucits-etf?siteEntryPassthrough=true&switchLocale=y)、[IWDA](https://www.ishares.com/uk/individual/en/products/251882/ishares-msci-world-ucits-etf-acc-fund?siteEntryPassthrough=true)、[EIMI](https://www.ishares.com/uk/individual/en/products/264659/ishares-core-msci-em-imi-ucits-etf?siteEntryPassthrough=true&switchLocale=y)与 [AGGH](https://www.ishares.com/uk/individual/en/products/291770/ishares-global-aggregate-bond-ucits-etf-fund?siteEntryPassthrough=true)，以及 AXA IM [ANAU](https://core.axa-im.com/etf/insights/axa-ims-etf-platform-turns-three-flagship-nasdaq-100-ucits-etf-reaches-key-anniversary-milestone)、Invesco [EQQQ KIID](https://www.invesco.com/content/dam/invesco/uk/en/product-documents/etf/share-class/kiid/IE0032077012_kiid_en-uk.pdf)和 Vanguard [全市场 ETF 降费公告](https://www.vanguard.co.uk/professional/insights/we-have-lowered-our-etf-costs-again)。
+费率来自发行人的官方资料：State Street [SPYL](https://www.ssga.com/uk/en_gb/institutional/etfs/state-street-spdr-sp-500-ucits-etf-acc-spyl-gy)、Vanguard [VUAA](https://fund-docs.vanguard.com/SandP_500_UCITS_ETF_USD_Accumulating_9694_EU_INT_UK_EN.pdf)、iShares [CSPX](https://www.ishares.com/uk/individual/en/products/253743/CSSPX?siteEntryPassthrough=true&switchLocale=y)、[CNDX](https://www.ishares.com/uk/individual/en/products/253741/ishares-nasdaq-100-ucits-etf?siteEntryPassthrough=true&switchLocale=y)、[IWDA](https://www.ishares.com/uk/individual/en/products/251882/ishares-msci-world-ucits-etf-acc-fund?siteEntryPassthrough=true)、[EIMI](https://www.ishares.com/uk/individual/en/products/264659/ishares-core-msci-em-imi-ucits-etf?siteEntryPassthrough=true&switchLocale=y)与 [AGGH](https://www.ishares.com/uk/individual/en/products/291770/ishares-global-aggregate-bond-ucits-etf-fund?siteEntryPassthrough=true)，以及 AXA IM [ANAU](https://core.axa-im.com/etf/insights/axa-ims-etf-platform-turns-three-flagship-nasdaq-100-ucits-etf-reaches-key-anniversary-milestone)、Invesco [EQQQ 产品文件](https://www.invesco.com/content/dam/invesco/uk/en/product-documents/etf/share-class/kiid/IE0032077012_kiid_en-uk.pdf)和 Vanguard [全市场 ETF 降费公告](https://www.vanguard.co.uk/professional/insights/we-have-lowered-our-etf-costs-again)。
 
 同一基金在不同交易所可能有不同 ticker 与交易币种；应先按 **ISIN** 确认基金，再选择 EUR 上市代码。EUR 交易代码只避免订单层面的换汇，并不自动把底层美元资产变成 EUR 对冲。
 
 ## 各平台的自动定投、费用与产品覆盖
 
-| 平台与区域 | 指数定投路径 | 自动定投 | 两只 ETF 每月各买一次 | 产品覆盖与主要限制 |
+| 平台与区域 | 指数定投路径 | 自动定投 | 两只 ETF 每月各买一次 | 产品覆盖与主要说明 |
 |---|---|---|---:|---|
-| **IBKR 美国账户 / Pro** | 以账户实际权限为准；EEA Retail 公开规则可能拦截 | 是；仅可碎股产品，日/周/双周/月/季/年 | 若允许美国 ETF，Recurring 约 **$24/年** | 24,047 只美/加/欧可碎股股票或 ETF；Pro 自动定投费以预览/成交单为准 |
-| **Charles Schwab 美国券商账户** | 新增资金只能走 UCITS 对标：SPYL/VUAA/CSPX、ANAU/CNDX/EQQQ | 未发现自选 ETF AIP；需手动 | 两只 UCITS 电话单约 **$1,200/年** | 2,000+ 美国 ETF；UCITS 每笔 $50 且需 specialist |
+| **IBKR 美国账户 / Pro** | 直接买美国版 VOO/QQQ/QQQM | 是；仅可碎股产品，日/周/双周/月/季/年 | Recurring 约 **$24/年** | 24,047 只美/加/欧可碎股股票或 ETF；费用以预览/成交单为准 |
+| **Charles Schwab 美国账户** | 直接买美国版 VOO/QQQ/QQQM | 自选 ETF 按手动买入计算 | 在线交易 **$0/年** | 2,000+ 美国 ETF；每月两只共 24 笔仍为 $0 |
 | **Trading 212 爱尔兰** | 使用 UCITS 对标：SPYL/VUAA/CSPX、ANAU/CNDX/EQQQ | 是；单品日/周/双周/月，Pie 另有更长周期 | EUR UCITS **€0** | 公共 Invest 目录 13,000+ 股票与 ETF 合计；Pie 外币 slice 每次收 0.15% FX |
 | **Trade Republic 爱尔兰** | 使用平台合资格的 S&P 500 与 Nasdaq-100 UCITS ETF | 是；周/月两次/月/季 | Savings Plan **€0** | 爱尔兰当前准确 ETF 数未公开；产品与计划资格以 app 为准 |
 | **Revolut 爱尔兰** | 使用带 Investment Plan 标记的欧洲 UCITS 对标产品 | 是；合资格产品可日/周/月 | 合资格计划 **€0** | 2024 年官方曾披露 500+ ETF；准确合资格清单以 app 为准 |
@@ -126,15 +103,15 @@ VOO、VTI 与 VT 的费率来自 Vanguard 的 [VOO](https://investor.vanguard.co
 
 IBKR 的[定投功能说明](https://www.interactivebrokers.com/campus/trading-lessons/using-ibkrs-recurring-investments-feature/)确认可按固定金额与多种频率执行，且只有可碎股证券合资格；[Fact Sheet](https://www.interactivebrokers.com/en/general/about/ibkr-fact-sheet.php)列出 24,047 只可碎股股票或 ETF。Trading 212 规则见 [Pies & AutoInvest](https://helpcentre.trading212.com/hc/en-us/articles/30661163244317-Pies-AutoInvest-Introduction)与[主货币限制](https://helpcentre.trading212.com/hc/en-us/articles/34159237080861-Can-I-choose-the-currency-in-which-to-buy-sell-assets-for-Invest-accounts)。Trade Republic 规则见[创建 Savings Plan](https://support.traderepublic.com/en-ie/768)与[费用说明](https://support.traderepublic.com/en-ie/760-What-are-savings-plans)。Revolut 规则见[Investment Plans](https://help.revolut.com/en-IE/help/wealth/stocks/getting-started-with-etf-s/etfs-investment-plans/)。
 
-三家欧洲平台的账户实体与产品范围如下：
+欧洲平台的产品与计划资格如下：
 
-- Trading 212 的账户实体应按其[官方指引](https://helpcentre.trading212.com/hc/en-us/articles/4403189221649-Where-can-I-see-which-entity-my-account-is-registered-under)在 app 菜单底部确认。公开目录能查到 [SPYL](https://www.trading212.com/trading-instruments/invest/SPYL.NL)、[CSPX](https://www.trading212.com/trading-instruments/invest/CSPX.GB)和 [EQQQ](https://www.trading212.com/trading-instruments/invest/EQQQ.IT)，但是否对对应实体开放、是否能加入计划仍以登录后的 app 为准。
+- Trading 212 公开目录能查到 [SPYL](https://www.trading212.com/trading-instruments/invest/SPYL.NL)、[CSPX](https://www.trading212.com/trading-instruments/invest/CSPX.GB)和 [EQQQ](https://www.trading212.com/trading-instruments/invest/EQQQ.IT)；具体 share class 能否加入计划以 app 为准。
 - Trade Republic 爱尔兰区域的公开信息以 en-IE 页面为准；其他国家帮助页出现的 1,500、1,800 或 2,000+ ETF 不代表爱尔兰当前数量。定投资格应在爱尔兰 app 中通过 Save 标记确认。
-- Revolut 爱尔兰投资账户由 Revolut Securities Europe UAB 提供。两只 ETF 都有 Investment Plan 标记时年度买入佣金为 €0；如果产品不合资格，则回到套餐免费额度与普通佣金规则，不能继续假设 €0。
+- Revolut 的两只 ETF 都有 Investment Plan 标记时，年度买入佣金为 €0；如果产品不在计划内，则按套餐免费额度与普通佣金规则计算。
 
 ## IBKR Pro 的费用要分自动与手动
 
-假设账户确实允许购买 VOO/QQQ，全年两只 ETF 各买 12 次，不含 ETF 费用率、价差、换汇与卖出监管费：
+按美国版 IBKR Pro 账户直接购买 VOO/QQQ，全年两只 ETF 各买 12 次，不含 ETF 费用率、价差、换汇与卖出费用：
 
 | IBKR Pro 下单方式 | 公开费用口径 | 24 笔年度估算 |
 |---|---|---:|
@@ -150,21 +127,22 @@ IBKR 当前美国股票/ETF 费率见[官方佣金表](https://www.interactivebr
 
 还有一个容易漏掉的现金问题：如果 IBKR 是 margin account、账户只有 EUR 而没有足够 USD，官方在 Recurring Investments 页面说明可能建立 USD margin loan，而不是自动换汇。更稳妥的做法是提前把 EUR 合并换成 USD；IBKR 手动现货 FX 为 0.20 个基点起、最低约 $2/单，频繁小额换汇会被最低费主导。
 
-## 为什么不建议用 Schwab 买 UCITS 定投
+## Schwab：美国 ETF 零佣金，但按手动定投计算
 
-Schwab 的美国上市股票/ETF 在线佣金是 $0，但爱尔兰居住地限制会先阻止 VOO/QQQ 的新增购买。
+Schwab 的[个人价格指南](https://www.schwab.com/legal/schwab-pricing-guide-for-individual-investors)列明，美国交易所上市证券在线交易佣金为 **$0**。直接买美国版 VOO、QQQ 或 QQQM 时：
 
-Schwab 给 EEA 居民的替代路径是 UCITS ETF，但官方要求通过 Global Investing specialist 电话下单，每笔收 **$50 foreign transaction fee**。两只 ETF 每月各买一次就是：
+- 每月买一只，一年 12 笔：**$0**
+- 每月各买 VOO 与 QQQ，一年 24 笔：**$0**
+- 每周买一只，一年 52 笔：**$0**
+- 每周各买 VOO 与 QQQ，一年 104 笔：**$0**
 
-**24 × $50 = $1,200/年**
+Schwab 公开的 Automatic Investment Plan 主要覆盖共同基金，本文没有把自选 ETF 计为自动执行。因此，Schwab 的优势是零佣金，代价是需要按计划手动下单。若订单页支持按金额或碎股买入，可以精确投入 $100；否则需要按整股数量调整每次金额。
 
-这还不含基金 TER、价差和换汇。Schwab 的 Automatic Investment Plan 官方资料只覆盖共同基金，没有公开支持 VOO、QQQ 或自选 UCITS ETF 自动定投。已有 VOO/QQQ 可继续由 Schwab 持有或卖出；新增月投没有成本优势。
+Schwab One 以 USD 运作。若资金原本是 EUR，还需把实际换汇成本计入总费用；买入佣金为 $0 不代表换汇与买卖价差也为零。
 
-Schwab One 以 USD 运作。其[个人价格指南](https://www.schwab.com/legal/schwab-pricing-guide-for-individual-investors)显示 incoming wire 不收费，但非美元转换可能有较高加点；Schwab Global Account 单次换汇低于 $100,000 的公开档位为 1%。平台总成本还需计入入金与换汇费用。
+## 四种可执行方案
 
-## 三种可执行方案
-
-### 方案 A：IBKR 实际允许美国 ETF
+### 方案 A：用 IBKR 自动定投美国 ETF
 
 - 70% VOO，费用率 0.03%
 - 30% QQQM，费用率 0.15%
@@ -174,7 +152,17 @@ Schwab One 以 USD 运作。其[个人价格指南](https://www.schwab.com/legal
 
 该组合的基金费用略低于使用 QQQ。需要 QQQ 的期权与极高盘中流动性时再选择 QQQ；纯长期定投优先比较 QQQM。
 
-### 方案 B：IBKR 出现 KID/PRIIPs 拒单
+### 方案 B：用 Schwab 手动定投美国 ETF
+
+- 70% VOO，费用率 0.03%
+- 30% QQQM，费用率 0.15%
+- 按月或按周手动买入
+- 美国上市 ETF 在线佣金 $0
+- 用日历提醒固定执行日期
+
+Schwab 的显性交易费低于 IBKR Pro Recurring，但没有相同的自选 ETF 自动执行便利性。
+
+### 方案 C：在欧洲平台自动定投 UCITS ETF
 
 - 70% SPYL / VUAA / CSPX
 - 30% ANAU / CNDX / EQQQ / EQAC
@@ -183,25 +171,25 @@ Schwab One 以 USD 运作。其[个人价格指南](https://www.schwab.com/legal
 
 最低费组合 SPYL 70% + ANAU 30% 的加权基金费用约 **0.063%/年**，但 ANAU 较新、平台覆盖可能不如 CNDX/EQQQ，必须先在 app 内确认。
 
-### 方案 C：用一只全球基金简化
+### 方案 D：用一只全球基金简化
 
 - 美国直投权限存在：VT，费用率 0.06%
-- UCITS 路径：VWCE/VWRP，费用率 0.19%
+- 欧洲平台：VWCE/VWRP，费用率 0.19%
 
 这不是 VOO+QQQ 的一比一替代，而是减少美国大型科技股重复权重，并把记账、再平衡和定投计划简化为一只基金。
 
 ## 最后执行清单
 
-1. 在 IBKR 保存当前 Customer Agreement、Client Category 与账户确认信，确认法律实体；不要用“Pro”代替实体。
-2. 在 Client Portal 搜 VOO、QQQ、QQQM，尝试进入 Recurring Investment 创建页，查看是否出现 KID/PRIIPs 拒单与费用预览。
-3. 如果可买，确认 fractional shares 已开启，并为 margin account 预先准备 USD。
-4. Schwab 只把既有美国 ETF 当作持有/卖出仓位；不要按 $0 commission 设计新增定投。
-5. 对 Trading 212、Trade Republic、Revolut，使用爱尔兰账户逐只按 ISIN 核对真实 ETF、EUR 上市代码与计划资格。
-6. 记录每批买入日期、金额、ISIN、费用与汇率。爱尔兰税务居民仍按爱尔兰税法申报，券商位于美国不会改变税务居住地；详见本站[爱尔兰投资税务指南](/research/ireland-investment-tax)。
+1. 在 IBKR 为 VOO、QQQ 或 QQQM 建立 Recurring Investment，确认金额、频率与费用预览。
+2. 确认 IBKR fractional shares 已开启，并为 margin account 预先准备 USD。
+3. 在 Schwab 确认按金额或碎股下单功能；若只能买整股，则按当日价格调整投入金额。
+4. 为 Schwab 设置固定的周投或月投提醒，避免手动计划漏单。
+5. 对 Trading 212、Trade Republic、Revolut，逐只按 ISIN 核对 EUR 上市代码与计划资格。
+6. 记录每批买入日期、金额、ticker、ISIN、费用与汇率，定期比较实际成本与本文估算。
 
 ## 资料口径
 
-研究覆盖账户实体与监管分类、美国券商的产品权限、IBKR Pro 自动/手动费用、三家爱尔兰平台的定投费率，以及美国 ETF 与 UCITS ETF 内部费用。事实依据限于监管机构、券商与基金发行人的官方资料；无法从公开网页确认的账户级权限统一标为“以实际订单预览/app 为准”。
+研究覆盖美国版 IBKR Pro 与 Schwab 的交易费用、各平台自动定投功能、爱尔兰区欧洲平台费率，以及美国 ETF 与 UCITS ETF 内部费用。平台级费用以官方价格页为准；具体产品和计划资格以实际订单预览或 app 为准。
 
 ## 定投成本算例
 
@@ -209,12 +197,12 @@ Schwab One 以 USD 运作。其[个人价格指南](https://www.schwab.com/legal
 
 ### 例 1：每周投入一次——美国平台 $100，欧洲平台 €100
 
-IBKR 按每周 $100 直接定投 VOO 或 QQQ；爱尔兰区欧洲平台只能选择相同指数的 UCITS 对标产品，因此按每周 €100 计算。这里采用两组低费对标：**SPYL 对标 VOO 的 S&P 500**，**ANAU 对标 QQQ 的 Nasdaq-100**。如果平台没有这两个 share class，则按同一指数选择 VUAA/CSPX 或 CNDX/EQQQ。
+IBKR 与 Schwab 按每周 $100 直接买美国版 VOO 或 QQQ；爱尔兰区欧洲平台只能选择相同指数的 UCITS 对标产品，因此按每周 €100 计算。这里采用两组低费对标：**SPYL 对标 VOO 的 S&P 500**，**ANAU 对标 QQQ 的 Nasdaq-100**。如果平台没有这两个 share class，则按同一指数选择 VUAA/CSPX 或 CNDX/EQQQ。
 
 | 平台与账户区域 | S&P 500 每周投入 | Nasdaq-100 每周投入 | 年平台买入费 | 含首年基金费用的估算 |
 |---|---|---|---:|---:|
 | **IBKR 美国账户 / Pro** | $100 VOO | $100 QQQ | 每只 **$52** | VOO 约 **$52.80**；QQQ 约 **$56.77** |
-| **Charles Schwab / 爱尔兰居民** | €100 SPYL/VUAA/CSPX，电话下单 | €100 ANAU/CNDX/EQQQ，电话下单 | 每只 **US$2,600** | US$2,600 加对应基金费用 |
+| **Charles Schwab 美国账户** | $100 VOO，手动买入 | $100 QQQ，手动买入 | 每只 **$0** | VOO 约 **$0.80**；QQQ 约 **$4.77** |
 | **Trading 212 爱尔兰** | €100 SPYL 或其他合资格对标 | €100 ANAU 或其他合资格对标 | **€0** | SPYL 约 **€0.80**；ANAU 约 **€3.71** |
 | **Trade Republic 爱尔兰** | €100 合资格 S&P 500 UCITS ETF | €100 合资格 Nasdaq-100 UCITS ETF | **€0** | SPYL 费率口径约 **€0.80**；ANAU 费率口径约 **€3.71** |
 | **Revolut 爱尔兰** | €100 带计划标记的 S&P 500 UCITS ETF | €100 带计划标记的 Nasdaq-100 UCITS ETF | 合资格计划 **€0** | SPYL 费率口径约 **€0.80**；ANAU 费率口径约 **€3.71** |
@@ -229,12 +217,11 @@ IBKR Recurring Investments 使用 Standard Fixed 佣金；美国 ETF 每单费�
 ### 例 2：每周同时买 $100 VOO 和 $100 QQQ
 
 - 年投入：$100 × 52 × 2 = **$10,400**
-- IBKR Recurring 买入次数：104 笔
-- 平台佣金：104 × $1 = **$104**
 - 首年基金内部费用：VOO 约 $0.80，QQQ 约 $4.77
-- 首年平台佣金加基金内部费用：约 **$109.57**
+- **IBKR Pro Recurring：**104 笔佣金 $104；加基金内部费用后约 **$109.57**
+- **Schwab 手动买入：**104 笔在线佣金 $0；加基金内部费用后约 **$5.57**
 
-若把 QQQ 换成费率 0.15% 的 QQQM，首年 QQQM 内部费用约 $3.98，合计约 **$108.77**。第一年的差额不大，但随着累计持仓增加，较低费率的影响会逐年放大。
+若把 QQQ 换成费率 0.15% 的 QQQM，首年 QQQM 内部费用约 $3.98。VOO + QQQM 的首年合计在 IBKR 约为 **$108.77**，在 Schwab 约为 **$4.77**。Schwab 成本更低，但需要手动完成 104 笔订单。
 
 ### 例 3：每月投入 €100，买 EUR 上市的 UCITS ETF
 
@@ -248,7 +235,6 @@ IBKR Recurring Investments 使用 Standard Fixed 佣金；美国 ETF 每单费�
 | **Lightyear** | **€0** | 约 **€0.20** | 约 **€0.91** | 是；合资格碎股 ETF |
 | **DEGIRO Core Selection** | **€12** | 约 **€12.20** | 约 **€12.91** | 否；需手动下 12 笔订单 |
 | **DEGIRO 非 Core ETF** | **€36** | 约 **€36.20** | 约 **€36.91** | 否；未计可能的连接费 |
-| **Schwab 的 UCITS 路径** | **US$600** | US$600 加基金费用 | US$600 加基金费用 | 否；12 次电话单 |
 
 Trading 212 的[费用页](https://helpcentre.trading212.com/hc/en-us/articles/11471996799517-What-are-the-fees-in-the-Invest-ISAs-and-SIPP)与 [AutoInvest 页面](https://helpcentre.trading212.com/hc/en-us/articles/30661163244317-Pies-AutoInvest-Introduction)确认交易佣金为零并支持每周计划；Trade Republic 的[爱尔兰 Savings Plan 页面](https://support.traderepublic.com/en-ie/760-What-are-savings-plans)确认执行费为零。Revolut 只对[合资格 Investment Plan 产品](https://help.revolut.com/en-IE/help/wealth/stocks/getting-started-with-etf-s/etfs-investment-plans/)免佣。Lightyear 的[价格表](https://lightyear.com/en-eu/pricing)列明 ETF 无执行费，其[计划页](https://lightyear.com/en-ie/plans)支持每周、双周和每月自动投入。DEGIRO 的[爱尔兰价格表](https://www.degiro.ie/fees)列明 Core ETF 每笔 €1、其他 ETF 每笔 €3，并明确[不提供自动投资](https://www.degiro.ie/helpdesk/money-transfers-and-handling/can-i-set-automatic-investing-or-automatic-monthly-deposits)。
 
@@ -279,10 +265,12 @@ $100 以下的订单因“$1 与成交额 1% 取低”而基本承受 1% 佣金�
 
 每月买 $350 VOO 与 $150 QQQM，一年共 24 笔订单：
 
-| 组合 | 年投入 | IBKR 年佣金 | 首年平均资金 | 加权基金费率 | 首年佣金加基金费用 |
+| 平台与组合 | 年投入 | 年佣金 | 首年平均资金 | 加权基金费率 | 首年佣金加基金费用 |
 |---|---:|---:|---:|---:|---:|
-| 70% VOO + 30% QQQM | $6,000 | **$24** | 约 $3,250 | **0.066%** | 约 **$26.15** |
-| 70% VOO + 30% QQQ | $6,000 | **$24** | 约 $3,250 | **0.075%** | 约 **$26.44** |
+| IBKR：70% VOO + 30% QQQM | $6,000 | **$24** | 约 $3,250 | **0.066%** | 约 **$26.15** |
+| IBKR：70% VOO + 30% QQQ | $6,000 | **$24** | 约 $3,250 | **0.075%** | 约 **$26.44** |
+| Schwab：70% VOO + 30% QQQM | $6,000 | **$0** | 约 $3,250 | **0.066%** | 约 **$2.15** |
+| Schwab：70% VOO + 30% QQQ | $6,000 | **$0** | 约 $3,250 | **0.075%** | 约 **$2.44** |
 
 基金费率差异在第一年只有约 $0.29，因为资金是逐月进入；随着多年持仓余额增加，QQQM 相比 QQQ 的累计费用优势会更明显。
 
@@ -300,17 +288,19 @@ $100 以下的订单因“$1 与成交额 1% 取低”而基本承受 1% 佣金�
 
 IBKR 的现货 FX 最低约 $2/单，因此频繁小额换汇会被最低费主导。Trading 212 的 Pie 会对外币 slice 自动换汇并收取标准 FX 费；Lightyear 与 DEGIRO 的比例费用则直接随换汇总额增长。Revolut 的换汇成本受套餐、月度额度和交易时间影响，不能在不指定套餐的情况下给出单一年度数字。
 
-### 例 8：Schwab 通过电话买 UCITS ETF
+### 例 8：Schwab 手动买美国版 VOO/QQQ
 
-Schwab 对合资格非美国居民购买 UCITS ETF 每笔收 $50，且必须由 Global Investing specialist 协助下单。只看买入交易费：
+Schwab 在线买美国版 VOO、QQQ 或 QQQM 的佣金为 $0。以下假设订单支持按金额投入，并继续使用期初投入、价格不变的简化口径：
 
-| 计划 | 年订单数 | 年交易费 |
-|---|---:|---:|
-| 每月买一只 UCITS ETF | 12 | **$600** |
-| 每月各买一只 S&P 500 与 Nasdaq-100 UCITS ETF | 24 | **$1,200** |
-| 每周买一只 UCITS ETF | 52 | **$2,600** |
-| 每周各买两只 UCITS ETF | 104 | **$5,200** |
+| 手动计划 | 年订单数 | 年平台佣金 | 首年基金费用估算 |
+|---|---:|---:|---:|
+| 每月 $100 买 VOO | 12 | **$0** | 约 **$0.20** |
+| 每月 $100 买 QQQ | 12 | **$0** | 约 **$1.17** |
+| 每月各买 $100 VOO 与 QQQ | 24 | **$0** | 合计约 **$1.37** |
+| 每周 $100 买 VOO | 52 | **$0** | 约 **$0.80** |
+| 每周 $100 买 QQQ | 52 | **$0** | 约 **$4.77** |
+| 每周各买 $100 VOO 与 QQQ | 104 | **$0** | 合计约 **$5.57** |
 
-这些费用还没有加入基金费率、价差与换汇。Schwab 的[国际 ETF 说明](https://international.schwab.com/investment-products/etf-trading/how-do-etfs-work)同时确认：EEA 居民不能新增美国注册 ETF，而 UCITS ETF 电话单每笔收费 $50。
+这组成本低于 IBKR Pro Recurring，差别来自 Schwab 的 $0 在线交易佣金；操作上的取舍是 Schwab 需要手动执行，IBKR 可以自动执行。
 `,
 };
