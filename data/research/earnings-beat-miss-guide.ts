@@ -10,6 +10,7 @@ export const earningsBeatMissGuide: Article = {
   author: { slug: "brokerly-research", name: "Brokerly 研究团队", role: "Research" },
   publishedAt: "2026-08-09",
   readingMinutes: 13,
+  cover: "/images/research/earnings-beat-miss-guide.jpg",
   body: `
 假设四位分析师对某公司下一季度的 EPS 预测分别是：
 
