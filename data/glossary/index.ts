@@ -6,6 +6,7 @@ import { regulatoryTerms } from "./regulatory";
 import { executionTerms } from "./execution";
 import { securitiesTerms } from "./securities";
 import { fundTerms } from "./funds";
+import { earningsTerms } from "./earnings";
 import { marginTerms } from "./margin";
 import { brokerProductTerms } from "./broker-products";
 import { tokenTerms } from "./tokens";
@@ -24,6 +25,7 @@ const terms: GlossaryTerm[] = [
   ...executionTerms,
   ...securitiesTerms,
   ...fundTerms,
+  ...earningsTerms,
   ...marginTerms,
   ...brokerProductTerms,
   ...tokenTerms,

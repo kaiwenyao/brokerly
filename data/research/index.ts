@@ -5,12 +5,14 @@ import { usEtfVsUcitsVsToken } from "./us-etf-vs-ucits-vs-token";
 import { tradingFrequencyCost } from "./trading-frequency-cost";
 import { irelandInvestmentTax } from "./ireland-investment-tax";
 import { irelandEtfDcaPlatformComparison2026 } from "./ireland-etf-dca-platform-comparison-2026";
+import { earningsBeatMissGuide } from "./earnings-beat-miss-guide";
 
 /**
  * Research article registry — CONTENT LAYER.
  * One file per article; body is GFM markdown rendered by components/markdown.tsx.
  */
 const articles: Article[] = [
+  earningsBeatMissGuide,
   irelandEtfDcaPlatformComparison2026,
   brokerFeeComparison2026,
   eurUsdConversionCost,

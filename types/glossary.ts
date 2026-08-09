@@ -45,6 +45,7 @@ export type GlossaryCategory =
   | "交易执行"
   | "证券与结算"
   | "基金与 ETF"
+  | "公司财报与预期"
   | "保证金与融资融券"
   | "券商账户与产品"
   | "Token 与数字资产"
@@ -58,6 +59,7 @@ export const GLOSSARY_CATEGORIES: GlossaryCategory[] = [
   "交易执行",
   "证券与结算",
   "基金与 ETF",
+  "公司财报与预期",
   "保证金与融资融券",
   "券商账户与产品",
   "Token 与数字资产",
