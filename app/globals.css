@@ -81,3 +81,61 @@ body {
   color: var(--foreground);
   -webkit-font-smoothing: antialiased;
 }
+
+/* ---------------------------------------------------------------------------
+ * Mouse-reactive background effects (inspired by deepseek.com/harness/en/)
+ * ------------------------------------------------------------------------- */
+
+/* WebGL gradient mesh reveal — mirrors the reference page's
+   `#gradient-canvas.loading` -> `.loaded` opacity transition. */
+.gradient-canvas.loading {
+  opacity: 0;
+}
+.gradient-canvas.loaded {
+  opacity: 1;
+  transition: opacity 1.5s ease-in 50ms;
+}
+
+/* Decorative immersive wrapper used to host the gradient + hero content. */
+.fx-immersive {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Mouse-following cursor ring — `mix-blend-mode: difference` inverts the
+   background beneath it, producing the "background changes where the cursor
+   is" illusion. Hidden until JS confirms a fine pointer is present. */
+.ds-cursor-ring {
+  width: var(--ring-size);
+  height: var(--ring-size);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  background: transparent;
+  transition:
+    width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    opacity 0.3s ease,
+    transform 0.08s ease;
+}
+
+/* On touch / no-fine-pointer devices the ring never renders. */
+.ds-cursor-ring:not(.cursor-ring-enabled) {
+  display: none;
+}
+
+.ds-cursor-ring.is-visible {
+  opacity: 1;
+}
+
+/* Expanding into a soft filled disc over interactive elements. */
+.ds-cursor-ring.is-blend {
+  width: var(--ring-size-hover);
+  height: var(--ring-size-hover);
+  border-color: transparent;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.ds-cursor-ring.is-pressed {
+  transform: scale(0.8);
+}
