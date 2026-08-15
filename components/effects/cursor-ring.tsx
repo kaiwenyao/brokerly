@@ -43,12 +43,17 @@ export function CursorRing() {
     const target = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
     const current = { x: target.x, y: target.y };
     let hovering = false;
-    let rafId = 0;
+    let pressed = false;
     let visible = false;
+    let rafId = 0;
+    // Coalesce the (expensive) elementsFromPoint hover check to at most once
+    // per animation frame — pointermove can fire far more often than that.
+    let hoverDirty = false;
 
-    const updateHover = (clientX: number, clientY: number) => {
+    const updateHover = () => {
+      hoverDirty = false;
       const el = document
-        .elementsFromPoint(clientX, clientY)
+        .elementsFromPoint(target.x, target.y)
         .find((node) =>
           node.closest(
             "a, button, input, textarea, select, label, [data-cursor], [role='button']",
@@ -61,6 +66,12 @@ export function CursorRing() {
       }
     };
 
+    const scheduleHover = () => {
+      if (hoverDirty) return;
+      hoverDirty = true;
+      window.requestAnimationFrame(updateHover);
+    };
+
     const onPointerMove = (event: PointerEvent) => {
       target.x = event.clientX;
       target.y = event.clientY;
@@ -68,7 +79,7 @@ export function CursorRing() {
         visible = true;
         ring.classList.add("is-visible");
       }
-      updateHover(event.clientX, event.clientY);
+      scheduleHover();
     };
 
     const onPointerLeave = () => {
@@ -76,19 +87,29 @@ export function CursorRing() {
       ring.classList.remove("is-visible");
     };
 
-    const onPointerDown = () => ring.classList.add("is-pressed");
-    const onPointerUp = () => ring.classList.remove("is-pressed");
+    const onPointerDown = () => {
+      pressed = true;
+    };
+    const onPointerUp = () => {
+      pressed = false;
+    };
 
     window.addEventListener("pointermove", onPointerMove, { passive: true });
     window.addEventListener("pointerdown", onPointerDown, { passive: true });
     window.addEventListener("pointerup", onPointerUp, { passive: true });
-    document.addEventListener("pointerleave", onPointerLeave);
+    // `document.documentElement` (<html>) fires pointerleave reliably when the
+    // cursor exits the viewport, whereas `document` does not in some browsers.
+    document.documentElement.addEventListener("pointerleave", onPointerLeave);
 
     const render = () => {
       // Ease toward the target for a soft, trailing follow.
       current.x += (target.x - current.x) * 0.18;
       current.y += (target.y - current.y) * 0.18;
-      ring.style.transform = `translate3d(${current.x}px, ${current.y}px, 0) translate(-50%, -50%)`;
+      // The scale factor is applied inline because the rAF loop overwrites
+      // `transform` every frame — a stylesheet `.is-pressed` rule would be
+      // shadowed by the inline value and never render.
+      const scale = pressed ? 0.8 : 1;
+      ring.style.transform = `translate3d(${current.x}px, ${current.y}px, 0) translate(-50%, -50%) scale(${scale})`;
       rafId = window.requestAnimationFrame(render);
     };
     rafId = window.requestAnimationFrame(render);
@@ -98,7 +119,10 @@ export function CursorRing() {
       window.removeEventListener("pointermove", onPointerMove);
       window.removeEventListener("pointerdown", onPointerDown);
       window.removeEventListener("pointerup", onPointerUp);
-      document.removeEventListener("pointerleave", onPointerLeave);
+      document.documentElement.removeEventListener(
+        "pointerleave",
+        onPointerLeave,
+      );
     };
   }, []);
 

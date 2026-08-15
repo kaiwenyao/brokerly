@@ -135,7 +135,3 @@ body {
   border-color: transparent;
   background: rgba(255, 255, 255, 0.9);
 }
-
-.ds-cursor-ring.is-pressed {
-  transform: scale(0.8);
-}

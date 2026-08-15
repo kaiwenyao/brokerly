@@ -47,15 +47,15 @@ export default function HomePage() {
       <Hero />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <FeatureCards />
-      <ComparisonEntry />
-      <LatestResearch />
-      <PopularBrokers />
-      <Section title="Frequently asked questions">
-        <Faq items={HOME_FAQ} />
-      </Section>
-      <Section>
-        <Newsletter />
-      </Section>
+        <ComparisonEntry />
+        <LatestResearch />
+        <PopularBrokers />
+        <Section title="Frequently asked questions">
+          <Faq items={HOME_FAQ} />
+        </Section>
+        <Section>
+          <Newsletter />
+        </Section>
       </div>
     </>
   );
