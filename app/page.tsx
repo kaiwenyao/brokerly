@@ -42,18 +42,21 @@ const HOME_FAQ: FaqItem[] = [
 
 export default function HomePage() {
   return (
-    <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    <>
+      {/* Hero is full-bleed so the immersive gradient reaches the viewport edges. */}
       <Hero />
-      <FeatureCards />
-      <ComparisonEntry />
-      <LatestResearch />
-      <PopularBrokers />
-      <Section title="Frequently asked questions">
-        <Faq items={HOME_FAQ} />
-      </Section>
-      <Section>
-        <Newsletter />
-      </Section>
-    </div>
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <FeatureCards />
+        <ComparisonEntry />
+        <LatestResearch />
+        <PopularBrokers />
+        <Section title="Frequently asked questions">
+          <Faq items={HOME_FAQ} />
+        </Section>
+        <Section>
+          <Newsletter />
+        </Section>
+      </div>
+    </>
   );
 }
